@@ -4,3 +4,5 @@ public/
 .vscode/
 
 .sass-cache/
+
+posts/unlisted/
