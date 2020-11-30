@@ -18,11 +18,7 @@ menu:
       url: "/posts"
       weight: 30
 
-sectionPagesMenu: "main"
-
-taxonomies:
-  tag: null
-  category: null
+taxonomies: []
 
 permalinks:
   posts: /posts/:slug/

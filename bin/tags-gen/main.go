@@ -215,13 +215,38 @@ func main() {
 	inputQueue, outputQueue := makeRunner()
 
 	go func() {
-		paths, err := filepath.Glob("../../content/posts/*/*.md")
+		// Rather unoptimal but ok
+		paths := make([]string, 0)
+		pathsGlob, err := filepath.Glob("../../content/posts/*/*.md")
+		if err != nil {
+			return
+		}
+		paths = append(paths, pathsGlob...)
+
+		pathsGlob, err := filepath.Glob("../../content/posts/*/*/*.md")
+		if err != nil {
+			return
+		}
+		paths = append(paths, pathsGlob...)
+
+		pathsGlob, err := filepath.Glob("../../content/posts/*/*/*/*.md")
+		if err != nil {
+			return
+		}
+		paths = append(paths, pathsGlob...)
+
+		for _, path := range paths {
+			inputQueue <- input(path)
+		}
+
+		paths, err = filepath.Glob("../../content/posts/*/*/*.md")
 		if err != nil {
 			return
 		}
 		for _, path := range paths {
 			inputQueue <- input(path)
 		}
+
 		close(inputQueue)
 	}()
 

@@ -15,7 +15,15 @@ set -e
     fi
 
     (
+        cd content/posts/_unlisted
+        if [ "`git status -s`" ]
+        then
+            echo "The '_unlisted' directory is dirty. Please commit any pending changes."
+            exit 1;
+        fi
+    )
 
+    (
         echo "Checking out gh-pages branch into public"
         cd public
 
@@ -43,6 +51,11 @@ set -e
     )
 
     # This pushes everything
-    git push --recurse-submodules=on-demand
+    git push
+
+    (
+        cd content/posts/_unlisted
+        git push
+    )
 
 )
