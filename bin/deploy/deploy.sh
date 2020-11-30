@@ -39,8 +39,10 @@ set -e
         git add --all
         git commit -m "Publishing to gh-pages (publish.sh)"
 
-        # echo "Pushing to github"
+        # echo "Pushing public to github"
         git push
     )
+
+    git push --recurse-submodules=on-demand
 
 )
