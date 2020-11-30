@@ -1,0 +1,19 @@
+<!-- Compute reading time. Accepts include.content as an html content.
+  Computing time is (words/words_per_minute + images * 0.25 + formulae * 0.25) min -->
+
+
+{{ $total_images := sub (len (split .Content "<figure>")) 1 }}
+{{ $image_reading_time := mul $total_images 0.25 }}
+
+{{ $total_formulae := sub (len (split .Content "<script type=\"math/tex; mode=display\">")) 1 }}
+{{ $formulae_reading_time := mul $total_formulae 0.25 }}
+
+{{ $words_per_minute := 180 }}
+{{ $words_per_minute := mul $words_per_minute 1.0 }}
+
+{{ $words := .WordCount }}
+{{ $text_reading_time := div $words $words_per_minute }}
+
+{{ $total_reading_time := math.Ceil (add (add $text_reading_time $image_reading_time) $formulae_reading_time) }}
+
+{{ $total_reading_time }} min read

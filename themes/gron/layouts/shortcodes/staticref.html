@@ -1,0 +1,11 @@
+{{/*
+    This shortcode checks that a given raw file exists under the "/static"
+    directory and then outputs this path.
+*/}}
+
+{{ $path := .Get 0 }}
+{{ if fileExists (path.Join "/static" $path) -}}
+    {{ printf (path.Join "/" $path) }}
+{{ else }}
+    {{ errorf "[From %v] File could not be found %v" .Page.File.Path $path }}
+{{ end }}

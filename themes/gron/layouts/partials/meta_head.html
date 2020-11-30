@@ -1,0 +1,76 @@
+<title>{{ .Title }}</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<meta name="description" content="{{ .Title }}"/>
+<meta name="title" content="{{ .Title }}"/>
+<meta name="author" content="Alexey Gronskiy"/>
+
+<!-- OpenGraph Properties -->
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="{{ .Title }}"/>
+<meta property="og:description" content="{{ .Summary | plainify }}"/>
+<meta property="og:site_name" content="Alexey Gronskiy"/>
+<meta property="og:image" content="
+  {{- with .Params.thumbnail }}
+    {{- . }}
+  {{- else }}
+    {{- if fileExists `/static/default-thumbnail.jpg` -}}
+        /default-thumbnail.jpg
+    {{- else }}
+        {{- errorf `[From %v] File could not be found %v` .Page.File.Path `/static/default-thumbnail.jpg` }}
+    {{- end }}
+  {{- end }}"/>
+
+<!-- Twitter Properties -->
+<meta name="twitter:card" content="{{.Title}}"/>
+<meta name="twitter:title" content="{{.Title}}"/>
+<meta name="twitter:description" content="{{ .Summary }}"/>
+
+<!-- Google Authorship -->
+<a rel="author" href="https://plus.google.com/u/0/100694244192184027539"></a>
+
+<link rel="icon" href="favicon.ico">
+
+<link rel="alternate" href="{{ .Permalink | absURL }}" hreflang="x-default" />
+<link rel="alternate" href="{{ .Permalink | absURL }}" hreflang="{{ .Lang }}" />
+
+<!-- RSS -->
+{{ with .OutputFormats.Get "RSS" -}}
+<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml"
+    title="{{ printf `%s - RSS` $.Title }}" />
+<link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml"
+    title="{{ printf `%s - RSS` $.Title }}"/>
+{{ end -}}
+
+
+<!-- MathJax support -->
+{{- if isset .Params "mathjax" | and (eq (.Param "mathjax") true) }}
+<script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: "1rem",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                   autoNumber: "AMS",
+                },
+                unicode: {
+                   fonts: "STIXGeneral,'Arial Unicode MS'"
+                }
+            },
+            CommonHTML: {
+              scale: 95
+            },
+            showProcessingMessages: false,
+            messageStyle: "none"
+        });
+</script>
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+{{ end }}

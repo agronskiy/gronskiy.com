@@ -1,0 +1,14 @@
+{{/*
+    This shortcode checks that a given raw file exists under the "/content"
+    directory and then translates its filesystem path into the permalink-related
+    (relative to the permalink of the page that contains that path.)
+*/}}
+
+{{ $path := .Get 0 }}
+{{ if fileExists (path.Join "/content" $path) -}}
+    {{ $dir := path.Dir $path }}
+    {{ $base := path.Base $path }}
+    {{ printf (path.Join (relref . $dir) $base)  }}
+{{ else }}
+    {{ errorf "[From %v] File could not be found %v" .Page.File.Path $path }}
+{{ end }}

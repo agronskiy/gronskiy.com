@@ -1,0 +1,30 @@
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 pb-2 pb-sm-0">
+                <div class="h2 font-weight-light mb-0 pl-1 pl-sm-3" id="site-header-title">
+                    {{ $home := ref . "/about/index.html" }}
+                    <a href="{{ $home }}">Alexey Gronskiy</a>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <nav>
+                    <ul class="nav nav-pills float-right">
+                        {{ $currentPage := . }}
+                        {{ range .Site.Menus.main }}
+                        {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+                        {{ $active = or $active (and (eq .Name "Posts") (eq $currentPage.Section "post")) }}
+                        {{ $active = or $active (and (eq .Name "Posts") (eq $currentPage.Section "tags")) }}
+
+                        <li class="nav-item">
+                            <a class="nav-link{{ if $active }} active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <hr>
+    </div>
+</header>

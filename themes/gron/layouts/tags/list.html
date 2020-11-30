@@ -1,0 +1,142 @@
+{{ define "main" }}
+
+<!-- Figure out tags that are no unlisted -->
+{{- $all_tags := .Site.Data.tags_all.tags_all | sort -}}
+
+<!-- Language mapping to path -->
+
+{{ $lang_mapping := dict "all" "" "ru" "ru" "en" "en" }}
+
+<div class="container">
+
+    <div class="container pl-2 pb-2">
+        <div class="row small-button-list">
+            <div class="col-md-8 col-12">
+                Tags: &nbsp;
+
+                {{- $tag := .Param "tag" -}}
+                {{- $lang := .Param "lang" -}}
+                {{- $mapped_lang := index $lang_mapping $lang -}}
+
+                {{ with $referred_page := .Site.GetPage (path.Join "/tags" $mapped_lang) }}
+                <a href="{{ $referred_page.Permalink }}"
+                    class="btn btn-tag btn-xsm {{ if eq $tag `all` }}active{{ end }}" role="button">
+                    all tags
+                </a>
+                {{ end }}
+
+                {{ range $tag_iter := $all_tags }}
+                {{ with $referred_page := $.Site.GetPage (path.Join "/tags" ($tag_iter | urlize) $mapped_lang) }}
+                <a href="{{ $referred_page.Permalink }}"
+                    class="btn btn-tag btn-xsm {{ if eq $tag $tag_iter }}active{{ end }}"
+                    role="button">{{ $tag_iter }}</a>
+                {{ end }}
+                {{ end }}
+
+            </div>
+        </div>
+        <div class="row small-button-list">
+            <div class="col-md-6 col-12">
+                Languages: &nbsp;
+
+                {{ $tag_mapped := $tag}}
+                {{ if eq $tag_mapped "all" }}
+                {{ $tag_mapped = "" }}
+                {{ end }}
+
+                {{ with $referred_page := .Site.GetPage (path.Join "/tags" $tag_mapped "") }}
+                <a href="{{ $referred_page.Permalink }}"
+                    class="btn btn-language btn-xsm {{ if eq $lang `all` }}active{{ end }}" role="button">all</a>
+                {{ end }}
+
+                {{ with $referred_page := .Site.GetPage (path.Join "/tags" $tag_mapped "en") }}
+                <a href="{{ $referred_page.Permalink }}"
+                    class="btn btn-language btn-xsm {{ if eq $lang `en` }}active{{ end }}" role="button">en</a>
+                {{ end }}
+
+                {{ with $referred_page := .Site.GetPage (path.Join "/tags" $tag_mapped "ru") }}
+                <a href="{{ $referred_page.Permalink }}"
+                    class="btn btn-language btn-xsm {{ if eq $lang `ru` }}active{{ end }}" role="button">ru</a>
+                {{ end }}
+
+            </div>
+        </div>
+
+        {{- $pagesToShow := slice -}}
+        {{- range where (where .Site.RegularPages "Section" "posts") ".Params.unlisted" "!=" true -}}
+            {{- if or (eq $tag "all") (in .Params.tags $tag) -}}
+                {{- if or (eq $lang "all") (eq .Params.lang $lang) -}}
+                    {{ $pagesToShow = $pagesToShow | append . }}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+
+        <div class="row small-button-list">
+            <div class="col-md-8 col-12">
+                Years: &nbsp;
+                {{ $currYear := "" }}
+                {{ range $pagesToShow }}
+
+                {{ if ne (.Date.Format "2006") $currYear }}
+                {{ $currYear = (.Date.Format "2006") }}
+                <a href="#{{ print (.Date.Format `2006`) }}"
+                    class="btn btn-year btn-xsm" role="button">
+                    {{ print (.Date.Format "2006") }}
+                </a>
+                {{ end }}
+                {{ end }}
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container pb-2">
+                {{ $currYear = ""}}
+                {{ range $pagesToShow }}
+                {{ if ne (.Date.Format "2006") $currYear }}
+                    {{ $currYear = (.Date.Format "2006") }}
+                    <span id="{{ $currYear }}"></span>
+                    <hr>
+                    <div class="row align-items-baseline">
+                        <div class="col-6 text-left">
+                            <h3 class="mb-2 pb-1">
+                                {{ $currYear }}
+                            </h3>
+                        </div>
+                        <div class="col-6 text-right">
+                            <a href="#"><span class="fa fa-angle-double-up"></span> Go to top</a>
+                        </div>
+                    </div>
+                {{ end }}
+                <div class="row pl-0 pl-md-1">
+                    <div class="col-12 mb-1">
+                        <h4 class="mb-0"><a href="{{ .Permalink }}">{{ .Title | markdownify  }}</a>
+                        </h4>
+                        <div class="font-weight-light small pt-1 pb-1 pl-0">
+                            <span class="fa fa-calendar" aria-hidden="true"></span>
+                            {{ .Date.Format "02 Jan 2006" }}
+                            &bull; <span class="post-language">{{ .Params.lang }}</span>
+                            &bull;
+                            {{ range .Params.tags }}
+                            <span class="post-tag">{{ . }}</span>
+                            {{ end }}
+                            &bull; {{ partial "readingtime.html" . }}
+                        </div>
+
+                        {{/*
+                        <p class="mb-2 pl-0 pl-md-2">
+                            {{ .Summary  | markdownify }}
+                        </p>
+                        */}}
+
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    <p><a href="#"><span class="fa fa-angle-double-up"></span> Go to top</a></p>
+    <hr>
+</div>
+
+{{ end }}

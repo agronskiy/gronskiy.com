@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+    {{ partial "meta_head.html" . }}
+
+    {{ partial "css.html" . }}
+
+    <!-- TODO add title -->
+</head>
+
+<body>
+    <div class="container">
+
+        {{ partial "header.html" . }}
+
+        {{ block "main" . }}{{end}}
+
+        <div class="container">
+            {{ partial "footer.html" . }}
+        </div>
+    </div> <!-- /container -->
+
+    {{ partial "scripts.html" . }}
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+{{ partial `xml/tag_list.xml` . }}

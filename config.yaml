@@ -1,0 +1,56 @@
+baseURL: "https://gronskiy.com/"
+languageCode: "en-us"
+title: "Alexey Gronskiy's personal website"
+theme: "gron"
+
+menu:
+  main:
+    - identifier: about
+      name: "About"
+      url: "/"
+      weight: 10
+    - identifier: projects
+      name: "Projects"
+      url: "/projects"
+      weight: 20
+    - identifier: posts
+      name: "Posts"
+      url: "/posts"
+      weight: 30
+
+sectionPagesMenu: "main"
+
+taxonomies:
+  tag: null
+  category: null
+
+permalinks:
+  posts: /posts/:slug/
+
+outputs:
+  page: ["HTML"]
+  home: ["HTML"]
+  section: ["HTML", "RSS"]
+  taxonomyTerm: ["HTML", "RSS"]
+  taxonomy: ["HTML", "RSS"]
+
+outputFormats:
+  RSS:
+    baseName: "rss"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: false
+    style: vs
+    tabWidth: 2

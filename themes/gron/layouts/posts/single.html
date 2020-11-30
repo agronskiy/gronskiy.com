@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+<main role="main">
+    <div class="container">
+        <p><a href="javascript:history.back()"><span class="fa fa-angle-double-left"></span> Go back</a></p>
+    </div>
+    <div class="container mb-4">
+        <div class="row justify-content-md-center">
+            <div class="col col-md-8 text-sm-center">
+                <h1> {{ .Title }} </h1>
+                <div class="h4 font-weight-light">
+
+                    {{ .Date.Format "02 Jan 2006" }} &bull;
+                    {{ partial "readingtime.html" . }}
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col col-md-8 text-sm-center">
+                <span class="font-weight-light">Tags:</span> &nbsp;
+                {{ $taxo := "tags" }}
+                <!-- Use the plural form here -->
+
+                {{ range .Param $taxo }}
+                {{ $name := . }}
+                {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) }}
+                <a href="{{ .Permalink }}" class="btn btn-tag btn-xsm" role="button">{{ $name }}</a>
+                {{ else }}
+                <b>(UNLISTED TAG "{{ $name }}")</b>
+                {{ end }}
+                {{ end }}
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container main-text-container">
+        {{ .Content }}
+    </div>
+
+    <div class="container">
+        <p>
+            <span class="fa fa-comments fa-fw"></span> Want to discuss anything? Comments are welcome via e-mail
+            <a href="mailto:alexey@gronskiy.com">alexey@gronskiy.com</a>, Telegram
+            <a href="https://t.me/agronskiy">@agronskiy</a> or
+            <a href="/index.html">any other social media</a>.
+        </p>
+        <p>
+            <a href="javascript:history.back()"><span class="fa fa-angle-double-left"></span> Go back</a>
+            &nbsp; &nbsp;
+            <a href="#"><span class="fa fa-angle-double-up"></span> Go to top</a></p>
+        <hr>
+    </div>
+
+</main>
+
+{{ end }}
