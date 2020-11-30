@@ -11,6 +11,7 @@ import (
 	"path/filepath"
 	"runtime"
 	"sort"
+	"strings"
 	"text/template"
 
 	front "github.com/gernest/front"
@@ -118,6 +119,10 @@ func worker(
 	}()
 
 	for path := range inputQueue {
+
+		if strings.Contains(string(path), "_unlisted") {
+			return
+		}
 
 		m := front.NewMatter()
 		m.Handle("---", front.YAMLHandler)
