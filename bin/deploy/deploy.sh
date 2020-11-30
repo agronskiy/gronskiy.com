@@ -14,28 +14,33 @@ set -e
         exit 1;
     fi
 
-    echo "Checking out gh-pages branch into public"
+    (
 
-    cd public
-    git fetch --all
-    git checkout gh-pages
+        echo "Checking out gh-pages branch into public"
+        cd public
 
-    git pull
+        git fetch --all
 
-    echo "Removing existing files"
-    rm -rf *
+        git reset --hard origin/gh-pages
+        git checkout gh-pages
 
-    echo "Generating site"
-    cd ..
-    hugo
+        git pull
 
-    echo "Updating gh-pages branch"
-    cd public
-    echo "gronskiy.com" > CNAME
-    git add --all
-    git commit -m "Publishing to gh-pages (publish.sh)"
+        echo "Removing existing files"
+        rm -rf *
 
-    # echo "Pushing to github"
-    git push
+        echo "Generating site"
+        cd ..
+        hugo
+
+        echo "Updating gh-pages branch"
+        cd public
+        echo "gronskiy.com" > CNAME
+        git add --all
+        git commit -m "Publishing to gh-pages (publish.sh)"
+
+        # echo "Pushing to github"
+        git push
+    )
 
 )
