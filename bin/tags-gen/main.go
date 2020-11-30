@@ -223,13 +223,13 @@ func main() {
 		}
 		paths = append(paths, pathsGlob...)
 
-		pathsGlob, err := filepath.Glob("../../content/posts/*/*/*.md")
+		pathsGlob, err = filepath.Glob("../../content/posts/*/*/*.md")
 		if err != nil {
 			return
 		}
 		paths = append(paths, pathsGlob...)
 
-		pathsGlob, err := filepath.Glob("../../content/posts/*/*/*/*.md")
+		pathsGlob, err = filepath.Glob("../../content/posts/*/*/*/*.md")
 		if err != nil {
 			return
 		}
