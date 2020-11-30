@@ -18,7 +18,7 @@ set -e
 
     cd public
     git fetch --all
-    git checkout origin/gh-pages
+    git checkout gh-pages
 
     git pull
 
