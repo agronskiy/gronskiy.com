@@ -13,6 +13,15 @@ set -e
         exit 1;
     fi
 
+    (
+        cd ../content/posts
+        if [ "`git status -s`" ]
+        then
+            echo "The `posts` directory is dirty. Please commit any pending changes."
+        exit 1;
+    fi
+    )
+
     echo "Generating tags"
     (
         ./generate-tags.sh

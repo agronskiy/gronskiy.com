@@ -14,16 +14,10 @@ then
     exit 1;
 fi
 
-echo "Deleting old publication"
-rm -rf public
-git worktree prune
-rm -rf .git/worktrees/public/
-
 echo "Checking out gh-pages branch into public"
-mkdir public
-git worktree add -B gh-pages public origin/gh-pages
 
 cd public
+git checkout gh-pages
 
 git pull
 
