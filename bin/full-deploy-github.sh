@@ -11,7 +11,7 @@ set -e
         cd ../content/posts
         if [ "`git status -s`" ]
             then
-                echo "The `posts` directory is dirty. Please commit any pending changes."
+                echo "The 'posts' directory is dirty. Please commit any pending changes."
             exit 1;
         fi
     )
@@ -21,6 +21,7 @@ set -e
             echo "The working directory is dirty. Please commit any pending changes."
             exit 1;
     fi
+
     echo "Generating tags"
     (
         ./generate-tags.sh
