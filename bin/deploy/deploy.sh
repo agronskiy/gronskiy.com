@@ -23,7 +23,6 @@ set -e
 
         git reset --hard origin/gh-pages
         git checkout gh-pages
-
         git pull
 
         echo "Removing existing files"
@@ -39,10 +38,11 @@ set -e
         git add --all
         git commit -m "Publishing to gh-pages (publish.sh)"
 
-        # echo "Pushing public to github"
+        echo "Pushing public to github"
         git push
     )
 
+    # This pushes everything
     git push --recurse-submodules=on-demand
 
 )
