@@ -14,7 +14,7 @@
                         {{ $currentPage := . }}
                         {{ range .Site.Menus.main }}
                         {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
-                        {{ $active = or $active (and (eq .Name "Posts") (eq $currentPage.Section "post")) }}
+                        {{ $active = or $active (and (eq .Name "Posts") (eq $currentPage.Section "posts")) }}
                         {{ $active = or $active (and (eq .Name "Posts") (eq $currentPage.Section "tags")) }}
 
                         <li class="nav-item">

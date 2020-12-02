@@ -23,6 +23,14 @@ set -e
         fi
     )
 
+    # This pushes everything
+    git push
+    (
+        cd content/posts/_unlisted
+        git push
+    )
+
+    # This builds
     (
         echo "Checking out gh-pages branch into public"
         cd public
@@ -44,17 +52,10 @@ set -e
         cd public
         echo "gronskiy.com" > CNAME
         git add --all
-        git commit -m "Publishing to gh-pages (publish.sh)"
+        # Below commits only when something changed
+        git diff-index --quiet HEAD | git commit -m "Publishing to gh-pages (publish.sh)"
 
         echo "Pushing public to github"
-        git push
-    )
-
-    # This pushes everything
-    git push
-
-    (
-        cd content/posts/_unlisted
         git push
     )
 
