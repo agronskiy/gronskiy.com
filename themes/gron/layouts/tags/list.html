@@ -7,9 +7,8 @@
 
 {{ $lang_mapping := dict "all" "" "ru" "ru" "en" "en" }}
 
-<div class="container">
-
-    <div class="container pl-2 pb-2">
+<main role="main">
+    <div class="container pb-2">
         <div class="row small-button-list">
             <div class="col-md-8 col-12">
                 Tags: &nbsp;
@@ -135,8 +134,14 @@
             </div>
         </div>
     </div>
-    <p><a href="#"><span class="fa fa-angle-double-up"></span> Go to top</a></p>
-    <hr>
-</div>
+    <div class="container">
+        <div class="row align-items-baseline">
+            <div class="col text-right">
+                <a href="#"><span class="fa fa-angle-double-up"></span> Go to top</a>
+            </div>
+        </div>
+        <hr>
+    </div>
+</main>
 
 {{ end }}
