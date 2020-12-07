@@ -19523,16 +19523,16 @@ ol {
 /* Change margin and paddings for grid for mobile devices to more compact ones*/
 @media (max-width: 767.98px) {
   .container {
-    padding-right: 0.45rem;
-    padding-left: 0.45rem; }
+    padding-right: 5px;
+    padding-left: 5px; }
 
   .row {
-    margin-right: -0.45rem;
-    margin-left: -0.45rem; }
+    margin-right: -5px;
+    margin-left: -5px; }
     .row > .col,
     .row > [class*="col-"] {
-      padding-right: 0.45rem;
-      padding-left: 0.45rem; } }
+      padding-right: 5px;
+      padding-left: 5px; } }
 /* The font-size defined here will be used as 1rem for all the descendants.
 This is by def of 1rem. */
 :root {
@@ -20226,12 +20226,15 @@ pre.chroma {
 
 div.highlight {
   border-style: solid;
-  border-radius: .3rem;
   border-width: 1px;
   border-color: #c2c2c2;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   margin: 1.5rem 0rem;
   /* See https://stackoverflow.com/questions/12403998/border-is-cutting-off-when-using-border-radius */
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black); }
   div.highlight code {
     font-size: 95%; }
     @media (min-width: 768px) {

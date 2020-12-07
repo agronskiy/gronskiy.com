@@ -40,7 +40,7 @@ $img-landscape: (
     sm: 92%,
     md: 89%,
     lg: 84%,
-    xl: 84% // not used,,,,,
+    xl: 84%,
 );
 
 $img-portrait: (
@@ -48,11 +48,11 @@ $img-portrait: (
     sm: 73%,
     md: 69%,
     lg: 66%,
-    xl: 66% // not used,,,,,
+    xl: 66%,
 );
 
 // Padding / margin for flex grid on extra-small devices (xs to sm).
-$custom-xs-grid-padding: 0.45rem;
+$custom-xs-grid-padding: 5px;
 
 // This goes AFTER everything
 @import "node_modules/bootstrap/scss/bootstrap";
