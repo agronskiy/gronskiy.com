@@ -20234,6 +20234,7 @@ div.highlight {
   margin: 1.5rem 0rem;
   /* See https://stackoverflow.com/questions/12403998/border-is-cutting-off-when-using-border-radius */
   overflow: hidden;
+  /* See https://forum.webflow.com/t/safari-not-hiding-overflow-on-rounded-corner-divs/55060/2 */
   -webkit-mask-image: -webkit-radial-gradient(white, black); }
   div.highlight code {
     font-size: 95%; }
