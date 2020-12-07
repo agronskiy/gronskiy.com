@@ -52,7 +52,7 @@ $img-portrait: (
 );
 
 // Padding / margin for flex grid on extra-small devices (xs to sm).
-$custom-xs-grid-padding: 5px;
+$custom-xs-grid-padding: 0.45rem;
 
 // This goes AFTER everything
 @import "node_modules/bootstrap/scss/bootstrap";
