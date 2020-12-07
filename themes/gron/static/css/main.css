@@ -19523,16 +19523,16 @@ ol {
 /* Change margin and paddings for grid for mobile devices to more compact ones*/
 @media (max-width: 767.98px) {
   .container {
-    padding-right: 0.3rem;
-    padding-left: 0.3rem; }
+    padding-right: 0.45rem;
+    padding-left: 0.45rem; }
 
   .row {
-    margin-right: -0.3rem;
-    margin-left: -0.3rem; }
+    margin-right: -0.45rem;
+    margin-left: -0.45rem; }
     .row > .col,
     .row > [class*="col-"] {
-      padding-right: 0.3rem;
-      padding-left: 0.3rem; } }
+      padding-right: 0.45rem;
+      padding-left: 0.45rem; } }
 /* The font-size defined here will be used as 1rem for all the descendants.
 This is by def of 1rem. */
 :root {

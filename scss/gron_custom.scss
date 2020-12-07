@@ -58,7 +58,6 @@ ol {
 
 /* Change margin and paddings for grid for mobile devices to more compact ones*/
 @include media-breakpoint-between(xs, sm) {
-    $custom-xs-grid-padding: 0.3rem;
     .container {
         padding-right: $custom-xs-grid-padding;
         padding-left: $custom-xs-grid-padding;
