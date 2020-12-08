@@ -52,7 +52,7 @@ ol {
     }
 
     @include media-breakpoint-up(lg) {
-        max-width: map-get($grid-breakpoints, lg) - 120px;
+        max-width: map-get($grid-breakpoints, lg) - 140px;
     }
 }
 
