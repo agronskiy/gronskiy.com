@@ -13,6 +13,12 @@ body {
     }
 }
 
+@include media-breakpoint-up(md) {
+    html {
+        overflow-y: scroll;
+    }
+}
+
 @include media-breakpoint-down(sm) {
     html,
     body {

@@ -19483,6 +19483,9 @@ body {
     body {
       line-height: 1.5; } }
 
+@media (min-width: 768px) {
+  html {
+    overflow-y: scroll; } }
 @media (max-width: 767.98px) {
   html,
   body {
@@ -20231,7 +20234,7 @@ div.highlight {
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  margin: 1.5rem 0rem;
+  margin: 0rem 0rem 1rem;
   /* See https://stackoverflow.com/questions/12403998/border-is-cutting-off-when-using-border-radius */
   overflow: hidden;
   /* See https://forum.webflow.com/t/safari-not-hiding-overflow-on-rounded-corner-divs/55060/2 */

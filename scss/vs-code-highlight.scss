@@ -366,7 +366,7 @@ div.highlight {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
 
-    margin: 1.5rem 0rem;
+    margin: 0rem 0rem $paragraph-margin-bottom;
     /* See https://stackoverflow.com/questions/12403998/border-is-cutting-off-when-using-border-radius */
     overflow: hidden;
     /* See https://forum.webflow.com/t/safari-not-hiding-overflow-on-rounded-corner-divs/55060/2 */
