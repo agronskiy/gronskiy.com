@@ -352,11 +352,6 @@
 
 /* ========= Added by agronskiy ============ */
 
-/* Removing unnecessary bottom margin */
-pre.chroma {
-    margin: 0;
-}
-
 div.highlight {
     border-style: solid;
     border-width: 1px;
@@ -377,6 +372,11 @@ div.highlight {
         @include media-breakpoint-up(md) {
             font-size: 85%;
         }
+
+        // This is to make the width computation by the widest element, see
+        // https://stackoverflow.com/questions/12719997/css-width-100-including-overflow
+        display: inline-block;
+        min-width: 100%;
     }
 }
 
@@ -385,4 +385,13 @@ pre.chroma {
     @include media-breakpoint-up(md) {
         padding: 5px 9px;
     }
+
+    margin: 0;
+}
+
+// This is to make the width computation by the widest element, see
+// https://stackoverflow.com/questions/12719997/css-width-100-including-overflow
+.chroma code {
+    display: inline-block;
+    min-width: 100%;
 }
