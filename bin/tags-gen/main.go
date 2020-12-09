@@ -143,7 +143,7 @@ func worker(
 					return
 				}
 			default:
-				log.Printf("Tag `unlisted` in %v unrecognized!")
+				log.Printf("Tag `unlisted` in %v unrecognized!", f)
 			}
 		}
 
