@@ -20,7 +20,7 @@
 
 {{ $img_class := .Scratch.Get "img_class" }}
 
-<figure>
+<figure class="image">
   <a href="{{ $img }}" data-lightbox="page_image">
     <img src="{{ $img }}"
       {{ with .Get "alt" }}  alt="{{.}}" {{ end }} class="{{ $img_class }}"
@@ -31,10 +31,8 @@
   {{ if isset .Params "caption" }}
   {{/* NOTE(agronskiy) We must utilize a newlines inside figcaption to process it as
     Markdown due to specs */}}
-  <figcaption class="font-italic mt-1" markdown="span">
-
+  <figcaption class="imgcaption font-italic mt-1" markdown="span">
   {{ .Get "caption" | markdownify }}
-
-  </span>
+  </figcaption>
   {{ end }}
 </figure>

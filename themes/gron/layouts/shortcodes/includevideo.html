@@ -1,6 +1,6 @@
 {{ $url := .Get "url"}}
 
-<figure>
+<figure class="video">
   <div class="img-landscape">
     <div class="video-embed">
       <iframe src="{{ $url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -9,7 +9,7 @@
   {{ if isset .Params "caption" }}
   {{/* NOTE(agronskiy) We must utilize a newlines inside figcaption to process it as
         Markdown due to specs */}}
-  <figcaption class="font-italic mt-1" markdown="span">
+  <figcaption class="imgcaption font-italic mt-1" markdown="span">
 
   {{ .Get "caption" | markdownify }}
 

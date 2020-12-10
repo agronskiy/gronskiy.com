@@ -19715,8 +19715,10 @@ font and make necessary adjustments. */
     margin: 0 auto;
     font-style: italic;
     font-size: 0.92rem;
-    width: 85%; }
-  .main-text-container figure {
+    width: 98%; }
+    .main-text-container figcaption.imgcaption {
+      width: 85%; }
+  .main-text-container figure.image, .main-text-container figure.video {
     margin-bottom: 1rem; }
   @media (min-width: 560px) {
     .main-text-container h1,

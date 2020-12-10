@@ -258,11 +258,18 @@ font and make necessary adjustments. */
         margin: 0 auto;
         font-style: italic;
         font-size: 0.92rem;
-        width: 85%;
+        width: 98%;
+
+        &.imgcaption {
+            width: 85%;
+        }
     }
 
     figure {
-        margin-bottom: 1rem;
+        &.image,
+        &.video {
+            margin-bottom: 1rem;
+        }
     }
 
     /* Headers padding */
