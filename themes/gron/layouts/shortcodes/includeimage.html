@@ -1,22 +1,22 @@
 <!-- Inspired by https://eduardoboucas.com/blog/2014/12/07/including-and-managing-images-in-jekyll.html -->
 
-{{ $img := .Get "img" }}
+{{- $img := .Get "img" -}}
 
 <!-- Checking that file exists -->
-{{ if not (fileExists (path.Join (path.Dir .Page.File.Path) $img)) }}
+{{- if not (fileExists (path.Join (path.Dir .Page.File.Path) $img)) -}}
     {{ errorf "[From %v] File could not be found %v" .Page.File.Path $img }}
-{{ end }}
+{{- end -}}
 
 <!-- Image class -->
-{{ if isset .Params "portrait" }}
-  {{ .Scratch.Set "img_class" "img-portrait" }}
-{{ else }}
-  {{ if and (isset .Params "bleed") (eq (.Get "bleed") "true") }}
-    {{ .Scratch.Set "img_class" "img-landscape-bleed" }}
-  {{ else }}
-    {{ .Scratch.Set "img_class" "img-landscape" }}
-  {{ end }}
-{{ end }}
+{{- if isset .Params "portrait" -}}
+  {{- .Scratch.Set "img_class" "img-portrait" -}}
+{{- else -}}
+  {{- if and (isset .Params "bleed") (eq (.Get "bleed") "true") -}}
+    {{- .Scratch.Set "img_class" "img-landscape-bleed" -}}
+  {{- else -}}
+    {{- .Scratch.Set "img_class" "img-landscape" -}}
+  {{- end -}}
+{{- end -}}
 
 {{ $img_class := .Scratch.Get "img_class" }}
 
