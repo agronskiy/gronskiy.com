@@ -514,14 +514,14 @@ code {
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(90deg, rgba(#007bff, 0.2), rgba(#007bff, 0.6) 10%, rgba(#007bff, 0.1));
+        background: rgba(color("blue"), 0.5);
         opacity: 0;
     }
 
     &:target,
     &:focus {
         &::after {
-            animation: highlight 2s cubic-bezier(0.3, 0, 1, 0.7);
+            animation: highlight 1.5s cubic-bezier(0.3, 0, 1, 0.7);
         }
     }
 }
