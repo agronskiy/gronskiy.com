@@ -503,13 +503,13 @@ code {
     }
 }
 
-.footnotes li {
+.footnotes li,
+sup .footnote-ref {
     position: relative;
 
-    &::after {
+    .target-highlight {
         position: absolute;
         z-index: -1;
-        content: "";
         top: 0;
         left: 0;
         right: 0;
@@ -517,10 +517,13 @@ code {
         background: rgba(color("blue"), 0.5);
         opacity: 0;
     }
+}
 
+.footnotes li,
+sup {
     &:target,
     &:focus {
-        &::after {
+        .target-highlight {
             animation: highlight 1.5s cubic-bezier(0.3, 0, 1, 0.7);
         }
     }
