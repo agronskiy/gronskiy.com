@@ -504,12 +504,14 @@ code {
 }
 
 .footnotes li,
-sup .footnote-ref {
+sup,
+span[id^="mjx-eqn"] {
     position: relative;
 
-    .target-highlight {
+    &::after {
         position: absolute;
         z-index: -1;
+        content: "";
         top: 0;
         left: 0;
         right: 0;
@@ -517,13 +519,10 @@ sup .footnote-ref {
         background: rgba(color("blue"), 0.5);
         opacity: 0;
     }
-}
 
-.footnotes li,
-sup {
     &:target,
     &:focus {
-        .target-highlight {
+        &::after {
             animation: highlight 1.5s cubic-bezier(0.3, 0, 1, 0.7);
         }
     }
