@@ -1,0 +1,8 @@
+<!-- Kudos to https://willschenk.com/articles/2020/styling_tables_with_hugo/ -->
+
+{{ $htmlTable := .Inner | markdownify }}
+{{- $class := "table-bordered" -}}
+{{- $old := "<table>" -}}
+{{- $new := printf "<table class=\"table %s\">" $class -}}
+{{- $htmlTable := replace $htmlTable $old $new -}}
+{{ $htmlTable | safeHTML }}
