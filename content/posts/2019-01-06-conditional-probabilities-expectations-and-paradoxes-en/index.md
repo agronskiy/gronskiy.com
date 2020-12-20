@@ -22,7 +22,7 @@ mathjax: true
 
 ## Contents
 
-{{% toc %}}
+{{< toc >}}
 
 ## Intro
 
