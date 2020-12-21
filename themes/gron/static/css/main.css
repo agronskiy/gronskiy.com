@@ -19745,7 +19745,7 @@ font and make necessary adjustments. */
     position: relative;
     height: 0;
     overflow: hidden;
-    padding-bottom: 75%; }
+    padding-bottom: 60%; }
     .main-text-container .video-embed iframe {
       position: absolute;
       top: 0;
