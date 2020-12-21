@@ -19651,15 +19651,15 @@ font and make necessary adjustments. */
         min-width: 80%; } }
     @media (min-width: 560px) {
       .main-text-container .img-landscape {
-        max-width: 92%; } }
+        max-width: 95%; } }
     @media (min-width: 768px) {
       .main-text-container .img-landscape {
         margin-top: 0.5rem;
-        max-width: 89%; } }
+        max-width: 92%; } }
     @media (min-width: 992px) {
       .main-text-container .img-landscape {
         margin-top: 0.5rem;
-        max-width: 84%; } }
+        max-width: 92%; } }
   .main-text-container .img-landscape-bleed {
     max-width: 98%; }
     @media (max-width: 767.98px) {
@@ -19667,17 +19667,17 @@ font and make necessary adjustments. */
         min-width: 80%; } }
     @media (min-width: 560px) {
       .main-text-container .img-landscape-bleed {
-        max-width: 92%; } }
+        max-width: 95%; } }
     @media (min-width: 768px) {
       .main-text-container .img-landscape-bleed {
         margin-top: 0.5rem;
-        max-width: 124.6%;
-        margin-left: -12.3%; } }
+        max-width: 128.8%;
+        margin-left: -14.4%; } }
     @media (min-width: 992px) {
       .main-text-container .img-landscape-bleed {
         margin-top: 0.5rem;
-        max-width: 117.6%;
-        margin-left: -8.8%; } }
+        max-width: 128.8%;
+        margin-left: -14.4%; } }
   .main-text-container .img-portrait {
     max-width: 85%; }
     @media (max-width: 767.98px) {

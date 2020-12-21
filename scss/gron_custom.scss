@@ -130,6 +130,7 @@ h6,
     margin: 0 auto;
 }
 
+// This is to avoid that large image gets larger than vertical viewport size.
 %img-landscape-shared {
     max-height: 95vh;
     object-fit: contain;
