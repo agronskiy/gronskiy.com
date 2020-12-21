@@ -16,7 +16,7 @@ thumbnail: birth.png
   Бланк для самостоятельного перевода швейцарского свидетельства о рождении,
   который можно сделать самому и заверить в консульстве России в Берне.
 
-{{< includeimage img="birth.png" >}}
+{{% includeimage img="birth.png" %}}
 
 С переводом швейцарского свидетельства о рождении (*нем.* Geburtsurkunde) на русский язык с его последующим
 заверением сталкиваются многие. Я сделал два небольших шаблона, которые можно использовать
@@ -33,7 +33,7 @@ thumbnail: birth.png
 - [Шаблон перевода международного варианта свидетельства о рождении на русский язык (Google Docs)][template-intl]
 - Места, которые очевидно необходимо заменить, помечены *красным* цветом:
 
-{{< includeimage img="translation.png" >}}
+{{% includeimage img="translation.png" %}}
 
 [template]: https://docs.google.com/document/d/1_zULjnICU5CTmwu8tCHGwFuQCuFQT3UlVUhy-1ow5bo/edit?usp=sharing
 

@@ -14,4 +14,4 @@ are still underway, and I'll be happy to put my thesis online later.
 
 <!--more-->
 
-{{< includeimage img="phd_defense_thumb.jpg" >}}
+{{% includeimage img="phd_defense_thumb.jpg" %}}

@@ -1,10 +1,10 @@
 <figure class="code">
   {{ with .Get 0 }}
   <figcaption class="font-italic mb-1" markdown="span">
-    {{ . | markdownify }}:
+    {{ . }}:
   </figcaption>
   {{ end }}
   <div>
-    {{ .Inner | markdownify }}
+    {{ .Inner }}
   </div>
 </figure>

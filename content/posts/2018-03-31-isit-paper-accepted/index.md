@@ -16,10 +16,10 @@ Information Theory) in Colorado.
 
 <!--more-->
 
-{{< includeimage img="isit_paper.png" >}}
+{{% includeimage img="isit_paper.png" %}}
 
 This paper (in a reduced form) consititutes a chapter of my [PhD thesis][phd] and relates
 the combinatorics of some graph problems with information theory of disordered
 systems (like REM).
 
-[phd]: {{< ref "/posts/2018-12-23-phd-thesis-and-talk-published-en" >}}
+[phd]: {{% ref "/posts/2018-12-23-phd-thesis-and-talk-published-en" %}}

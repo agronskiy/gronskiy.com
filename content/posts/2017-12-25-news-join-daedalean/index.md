@@ -18,7 +18,7 @@ autonomous flying by visual cues (for those informed: cf.
 
 <!--more-->
 
-{{< includeimage img="daedalean-logo.png" >}}
+{{% includeimage img="daedalean-logo.png" %}}
 
 A latest explanation of the Daedalean's activity (in German, from
 [NZZ](https://www.nzz.ch)) can be found
