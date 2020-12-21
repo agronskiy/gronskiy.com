@@ -29,10 +29,12 @@
       {{- end -}}/>
   </a>
   {{ if isset .Params "caption" }}
-  {{/* NOTE(agronskiy) We must utilize a newlines inside figcaption to process it as
+  {{/* NOTE(agronskiy) We must utilize blanklines inside figcaption to process it as
     Markdown due to specs */}}
   <figcaption class="imgcaption font-italic mt-1" markdown="span">
+
   {{ .Get "caption" }}
+
   </figcaption>
   {{ end }}
 </figure>

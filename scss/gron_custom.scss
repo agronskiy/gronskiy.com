@@ -260,8 +260,10 @@ font and make necessary adjustments. */
         font-size: 0.92rem;
         width: 98%;
 
-        &.imgcaption {
-            width: 85%;
+        // See codecaption, includeimage, includevideo shortcodes. There's a
+        // <p> markdown-generated block there.
+        > p {
+            margin-bottom: 0rem;
         }
     }
 

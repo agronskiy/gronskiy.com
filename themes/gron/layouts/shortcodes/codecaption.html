@@ -1,10 +1,14 @@
 <figure class="code">
-  {{ with .Get 0 }}
-  <figcaption class="font-italic mb-1" markdown="span">
-    {{ . }}:
+{{/* NOTE(agronskiy) We must utilize blanklines inside figcaption to process it as
+    Markdown due to specs */}}
+  <figcaption class="font-italic mb-1">
+
+{{ .Get 0 }}:
+
   </figcaption>
-  {{ end }}
   <div>
-    {{ .Inner }}
+
+{{ .Inner }}
+
   </div>
 </figure>
