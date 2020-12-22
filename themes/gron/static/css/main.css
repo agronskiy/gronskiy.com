@@ -19974,10 +19974,6 @@ a.footnote-ref::after {
   .footnotes ol a.footnote-backref:hover::after {
     text-decoration: underline; }
 
-/* Background */
-.chroma {
-  background-color: #f2f2f2; }
-
 /* Other */
 /* Error */
 /* LineTableTD */
@@ -20018,22 +20014,22 @@ a.footnote-ref::after {
 /* Keyword */
 .chroma .k {
   color: #007020;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* KeywordConstant */
 .chroma .kc {
   color: #007020;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* KeywordDeclaration */
 .chroma .kd {
   color: #007020;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* KeywordNamespace */
 .chroma .kn {
   color: #007020;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* KeywordPseudo */
 .chroma .kp {
@@ -20042,7 +20038,7 @@ a.footnote-ref::after {
 /* KeywordReserved */
 .chroma .kr {
   color: #007020;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* KeywordType */
 .chroma .kt {
@@ -20061,7 +20057,7 @@ a.footnote-ref::after {
 /* NameClass */
 .chroma .nc {
   color: #0e84b5;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* NameConstant */
 .chroma .no {
@@ -20070,12 +20066,12 @@ a.footnote-ref::after {
 /* NameDecorator */
 .chroma .nd {
   color: #555555;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* NameEntity */
 .chroma .ni {
   color: #d55537;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* NameException */
 .chroma .ne {
@@ -20089,19 +20085,19 @@ a.footnote-ref::after {
 /* NameLabel */
 .chroma .nl {
   color: #002070;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* NameNamespace */
 .chroma .nn {
   color: #0e84b5;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* NameOther */
 /* NameProperty */
 /* NameTag */
 .chroma .nt {
   color: #062873;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* NameVariable */
 .chroma .nv {
@@ -20145,7 +20141,7 @@ a.footnote-ref::after {
 /* LiteralStringEscape */
 .chroma .se {
   color: #4070a0;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* LiteralStringHeredoc */
 .chroma .sh {
@@ -20207,7 +20203,7 @@ a.footnote-ref::after {
 /* OperatorWord */
 .chroma .ow {
   color: #007020;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* Punctuation */
 /* Comment */
@@ -20259,7 +20255,7 @@ a.footnote-ref::after {
 /* GenericHeading */
 .chroma .gh {
   color: #000080;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* GenericInserted */
 .chroma .gi {
@@ -20272,16 +20268,16 @@ a.footnote-ref::after {
 /* GenericPrompt */
 .chroma .gp {
   color: #c65d09;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* GenericStrong */
 .chroma .gs {
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* GenericSubheading */
 .chroma .gu {
   color: #800080;
-  font-weight: bold; }
+  font-weight: 500; }
 
 /* GenericTraceback */
 .chroma .gt {
@@ -20295,7 +20291,9 @@ a.footnote-ref::after {
 .chroma .w {
   color: #bbbbbb; }
 
-/* ========= Added by agronskiy ============ */
+.chroma {
+  background-color: #f2f2f2; }
+
 div.highlight {
   border-style: solid;
   border-width: 1px;
