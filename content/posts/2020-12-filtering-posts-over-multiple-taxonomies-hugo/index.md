@@ -132,10 +132,10 @@ lang: en
 
 or, for versions where either `tag` or `lang` is not filtered (i.e. we want to display all),
 
-{{% codecaption "Content of `/tags/aviation/_index.md`" %}}
+{{% codecaption "Content of `/tags/en/_index.md`" %}}
 ```yaml
 ---
-tag: all    # Note `all` here.
+tag: all        # Note `all` here.
 lang: en
 ---
 ```
@@ -148,7 +148,7 @@ Now, remember the highlighted lines in the directory structure above: we want `/
 ---
 tag: all
 lang: all
-url: /posts # Note `url:` here.
+url: /posts     # Note `url:` here.
 ---
 ```
 {{% /codecaption %}}
