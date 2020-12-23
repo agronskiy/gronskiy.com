@@ -402,12 +402,6 @@ As a result, Hugo won't try creating any potentially conflicting taxonomy list p
 - still no way to filter by more than one tag from a single taxonomy, e.g. if we wanted to filter all the
     posts with `tag` in `[aviation, hugo]`.
 
-All in all
-
-- [ ] What we did
-- [ ] Pros
-- [ ] Cons
-
 ### Summary
 
 All in all:
