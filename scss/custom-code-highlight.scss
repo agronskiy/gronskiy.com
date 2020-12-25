@@ -46,7 +46,7 @@
 }
 /* KeywordConstant */
 .chroma .kc {
-    color: cadetblue;
+    color: #b75501;
     font-weight: $custom-code-bold-weight;
 }
 /* KeywordDeclaration */
@@ -77,7 +77,7 @@
 }
 /* NameAttribute */
 .chroma .na {
-    color: #54790d;
+    color: #015692;
 }
 /* NameBuiltin */
 .chroma .nb {
@@ -129,18 +129,19 @@
 }
 /* NameOther */
 .chroma .nx {
+    color: #b75501;
 }
 /* NameProperty */
 .chroma .py {
 }
 /* NameTag */
 .chroma .nt {
-    color: #015692;
+    color: #b75501;
     font-weight: $custom-code-bold-weight;
 }
 /* NameVariable */
 .chroma .nv {
-    color: #b75501;
+    color: #015692;
 }
 /* NameVariableClass */
 .chroma .vc {

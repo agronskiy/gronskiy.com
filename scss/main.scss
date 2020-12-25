@@ -1,4 +1,9 @@
 @import "common";
 @import "gron_custom";
-@import "custom-code-highlight";
-@import "custom_highlight";
+
+// Uncomment for using "chroma"
+// @import "custom-code-highlight";
+// @import "custom_highlight";
+
+// Uncomment for using highlihg.js
+@import "custom_highlight_hljs";

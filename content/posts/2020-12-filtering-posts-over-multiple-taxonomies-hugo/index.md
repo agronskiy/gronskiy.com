@@ -9,6 +9,7 @@ tags:
     - go
 thumbnail: tags.png
 mathjax: true
+hljs: true
 ---
 
 > **TL;DR** \
@@ -89,18 +90,18 @@ Below, we will create a solution which allows to list posts on a cross-product o
 
 Let's introduce two subdirectories under Hugo's `/content` directory,
 
-```plain {hl_lines=[7,9,11]}
+```plaintext
 content/
 ├── posts/
 │   └── some-post/
 │       ├── index.md        => URL: posts/some-post
 │       └── picture.png
 └── tags/
-    ├── _index.md           => URL: posts/
+    ├── _index.md           => URL: posts/      [*]
     ├── ru/
-    │   └── _index.md       => URL: posts/ru
+    │   └── _index.md       => URL: posts/ru    [*]
     ├── en/
-    │   └── _index.md       => URL: posts/en
+    │   └── _index.md       => URL: posts/en    [*]
     ├── aviation/
     │   ├── _index.md       => URL: tags/aviation
     │   ├── ru/
@@ -114,7 +115,7 @@ content/
         └── en/
             └── _index.md   => URL: tags/hugo/en
 ```
-Note highlighted lines: they signify non-trivial permalinks. This is an optional "sugar" feature I wanted to have: "all tags" should be available on `/posts` URL for simplicity, not on `/tags`.
+Note `[*]`-marked lines: they signify non-trivial permalinks. This is an optional "sugar" feature I wanted to have: "all tags" should be available on `/posts` URL for simplicity, not on `/tags`.
 
 ### Frontmatter of list pages
 
@@ -163,7 +164,7 @@ Now we need to automate the process of creating the structure under `/tags`, bec
 
 Overall structure follows:
 
-```plain
+```plaintext
                +--------------+
                |  inputQueue  |      file paths
                +--------------+
@@ -329,7 +330,7 @@ func main() {
 In the above, remember the highlighted part from the directory structure above which signifies what I call *permalink
 conflict*.
 {{% codecaption `Relevant extract from the content directory above` %}}
-```plain {hl_lines=[2]}
+```plaintext {hl_lines=[2]}
 content/
 ├── posts/           =>  ??? conflict here
 │   ├── some-post/

@@ -7,10 +7,13 @@ tags:
     - %INSERT
 summary: >-
     %INSERT
-thumbnail: 
-draft: true
-unlisted: true
+thumbnail:
 mathjax: false
+hljs: false
+
+# For info, these are mostly not needed.
+# draft: true
+# unlisted: true
 
 ---
 
