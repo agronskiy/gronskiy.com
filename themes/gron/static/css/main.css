@@ -434,7 +434,7 @@ samp {
   font-family: "Fira Mono", "Monaco", "Consolas", "Lucida Console", monospace; }
 
 code {
-  font-size: 92%;
+  font-size: 87.5%;
   color: #212529;
   word-break: break-word; }
   a > code {
@@ -453,7 +453,7 @@ kbd {
 
 pre {
   display: block;
-  font-size: 92%;
+  font-size: 87.5%;
   color: #212529; }
   pre code {
     font-size: inherit;
@@ -6941,7 +6941,7 @@ samp {
   font-family: "Fira Mono", "Monaco", "Consolas", "Lucida Console", monospace; }
 
 code {
-  font-size: 92%;
+  font-size: 87.5%;
   color: #212529;
   word-break: break-word; }
   a > code {
@@ -6960,7 +6960,7 @@ kbd {
 
 pre {
   display: block;
-  font-size: 92%;
+  font-size: 87.5%;
   color: #212529; }
   pre code {
     font-size: inherit;
@@ -13448,7 +13448,7 @@ samp {
   font-family: "Fira Mono", "Monaco", "Consolas", "Lucida Console", monospace; }
 
 code {
-  font-size: 92%;
+  font-size: 87.5%;
   color: #212529;
   word-break: break-word; }
   a > code {
@@ -13467,7 +13467,7 @@ kbd {
 
 pre {
   display: block;
-  font-size: 92%;
+  font-size: 87.5%;
   color: #212529; }
   pre code {
     font-size: inherit;
@@ -19974,30 +19974,33 @@ a.footnote-ref::after {
   .footnotes ol a.footnote-backref:hover::after {
     text-decoration: underline; }
 
-code.hljs {
-  background-color: #f2f2f2;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #c2c2c2;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  padding: 3px 5px;
-  margin: 0rem 0rem 1rem;
-  /* See https://stackoverflow.com/questions/12403998/border-is-cutting-off-when-using-border-radius */
-  overflow: hidden;
-  /* See https://forum.webflow.com/t/safari-not-hiding-overflow-on-rounded-corner-divs/55060/2 */
-  -webkit-mask-image: -webkit-radial-gradient(white, black); }
-  @media (min-width: 768px) {
-    code.hljs {
-      padding: 5px 9px; } }
-
-pre,
 code {
-  font-size: 95%; }
+  font-size: 87%; }
   @media (min-width: 768px) {
-    pre,
     code {
       font-size: 85%; } }
+  code.hljs {
+    background-color: #f2f2f2;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #c2c2c2;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 4px 5px;
+    margin: 0rem 0rem 1rem; }
+    @media (min-width: 768px) {
+      code.hljs {
+        padding: 7px 9px; } }
+
+pre {
+  font-size: 87%; }
+  @media (min-width: 768px) {
+    pre {
+      font-size: 85%; } }
+  pre code {
+    font-size: inherit;
+    color: inherit;
+    word-break: normal; }
 
 /*# sourceMappingURL=main.css.map */

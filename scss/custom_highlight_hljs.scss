@@ -1,4 +1,10 @@
 code {
+    // This accounts for inline code
+    font-size: 87%;
+    @include media-breakpoint-up(md) {
+        font-size: 85%;
+    }
+
     &.hljs {
         background-color: $custom-code-bg-color;
 
@@ -10,23 +16,29 @@ code {
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
 
-        padding: 3px 5px;
+        padding: 4px 5px;
         @include media-breakpoint-up(md) {
-            padding: 5px 9px;
+            padding: 7px 9px;
         }
 
         margin: 0rem 0rem $paragraph-margin-bottom;
-        /* See https://stackoverflow.com/questions/12403998/border-is-cutting-off-when-using-border-radius */
-        overflow: hidden;
-        /* See https://forum.webflow.com/t/safari-not-hiding-overflow-on-rounded-corner-divs/55060/2 */
-        -webkit-mask-image: -webkit-radial-gradient(white, black);
+        // /* See https://stackoverflow.com/questions/12403998/border-is-cutting-off-when-using-border-radius */
+        // overflow: hidden;
+        // /* See https://forum.webflow.com/t/safari-not-hiding-overflow-on-rounded-corner-divs/55060/2 */
+        // -webkit-mask-image: -webkit-radial-gradient(white, black);
     }
 }
 
-pre,
-code {
-    font-size: 95%;
+pre {
+    font-size: 87%;
     @include media-breakpoint-up(md) {
         font-size: 85%;
+    }
+
+    // Account for some code outputs that place code tags in pre tags
+    code {
+        font-size: inherit;
+        color: inherit;
+        word-break: normal;
     }
 }
