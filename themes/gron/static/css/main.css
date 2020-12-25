@@ -19975,10 +19975,10 @@ a.footnote-ref::after {
     text-decoration: underline; }
 
 code {
-  font-size: 87%; }
+  font-size: 92%; }
   @media (min-width: 768px) {
     code {
-      font-size: 85%; } }
+      font-size: 90%; } }
   code.hljs {
     background-color: #f2f2f2;
     border-style: solid;
@@ -19994,10 +19994,10 @@ code {
         padding: 7px 9px; } }
 
 pre {
-  font-size: 87%; }
+  font-size: 85%; }
   @media (min-width: 768px) {
     pre {
-      font-size: 85%; } }
+      font-size: 80%; } }
   pre code {
     font-size: inherit;
     color: inherit;
