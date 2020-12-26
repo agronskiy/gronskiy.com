@@ -124,18 +124,6 @@ h6,
     font-style: italic;
 }
 
-/* Adding standard illustration classes to markup */
-%img-shared {
-    display: block;
-    margin: 0 auto;
-}
-
-// This is to avoid that large image gets larger than vertical viewport size.
-%img-landscape-shared {
-    max-height: 95vh;
-    object-fit: contain;
-}
-
 /* Buttons tend to be too close to each other when multilined on narrow screen */
 .small-button-list {
     line-height: $custom-line-height * 1.25;
@@ -156,86 +144,6 @@ font and make necessary adjustments. */
         padding-left: 20px;
     }
 
-    .img-landscape {
-        @extend %img-shared;
-        @extend %img-landscape-shared;
-
-        @include media-breakpoint-down(sm) {
-            min-width: $custom-xs-to-sm-min-img-width-landscape;
-        }
-
-        @include media-breakpoint-up(xs) {
-            max-width: map-get($img-landscape, xs);
-        }
-
-        @include media-breakpoint-up(sm) {
-            max-width: map-get($img-landscape, sm);
-        }
-
-        @include media-breakpoint-up(md) {
-            margin-top: 0.5rem;
-            max-width: map-get($img-landscape, md);
-        }
-
-        @include media-breakpoint-up(lg) {
-            margin-top: 0.5rem;
-            max-width: map-get($img-landscape, lg);
-        }
-    }
-
-    .img-landscape-bleed {
-        @extend %img-shared;
-        @extend %img-landscape-shared;
-
-        @include media-breakpoint-down(sm) {
-            min-width: $custom-xs-to-sm-min-img-width-landscape;
-        }
-
-        @include media-breakpoint-up(xs) {
-            max-width: map-get($img-landscape, xs);
-        }
-
-        @include media-breakpoint-up(sm) {
-            max-width: map-get($img-landscape, sm);
-        }
-
-        @include media-breakpoint-up(md) {
-            margin-top: 0.5rem;
-            max-width: 1.4 * map-get($img-landscape, md);
-            margin-left: -0.7 * map-get($img-landscape, md) + 50%;
-        }
-
-        @include media-breakpoint-up(lg) {
-            margin-top: 0.5rem;
-            max-width: 1.4 * map-get($img-landscape, lg);
-            margin-left: -0.7 * map-get($img-landscape, lg) + 50%;
-        }
-    }
-
-    .img-portrait {
-        @extend %img-shared;
-
-        @include media-breakpoint-down(sm) {
-            min-width: $custom-xs-to-sm-min-img-width-portrait;
-        }
-
-        @include media-breakpoint-up(xs) {
-            max-width: map-get($img-portrait, xs);
-        }
-
-        @include media-breakpoint-up(sm) {
-            max-width: map-get($img-portrait, sm);
-        }
-
-        @include media-breakpoint-up(md) {
-            max-width: map-get($img-portrait, md);
-        }
-
-        @include media-breakpoint-up(lg) {
-            max-width: map-get($img-portrait, lg);
-        }
-    }
-
     ul,
     ol {
         padding-left: 1.5rem;
@@ -254,24 +162,116 @@ font and make necessary adjustments. */
         }
     }
 
-    figcaption {
-        display: block;
-        margin: 0 auto;
-        font-style: italic;
-        font-size: 0.92rem;
-        width: 98%;
-
-        // See codecaption, includeimage, includevideo shortcodes. There's a
-        // <p> markdown-generated block there.
-        > p {
-            margin-bottom: 0rem;
-        }
-    }
-
     figure {
         &.image,
         &.video {
             margin-bottom: 1rem;
+        }
+
+        // This is to avoid that large image gets larger than vertical viewport size.
+        %img-landscape-shared {
+            max-height: 95vh;
+            object-fit: contain;
+        }
+
+        .img-landscape,
+        .img-landscape-bleed,
+        .img-portrait {
+            display: block;
+            margin: 0 auto;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .img-landscape {
+            @extend %img-landscape-shared;
+
+            @include media-breakpoint-down(sm) {
+                min-width: $custom-xs-to-sm-min-img-width-landscape;
+            }
+
+            @include media-breakpoint-up(xs) {
+                max-width: map-get($img-landscape, xs);
+            }
+
+            @include media-breakpoint-up(sm) {
+                max-width: map-get($img-landscape, sm);
+            }
+
+            @include media-breakpoint-up(md) {
+                margin-top: 0.5rem;
+                max-width: map-get($img-landscape, md);
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-top: 0.5rem;
+                max-width: map-get($img-landscape, lg);
+            }
+        }
+
+        .img-landscape-bleed {
+            @extend %img-landscape-shared;
+
+            @include media-breakpoint-down(sm) {
+                min-width: $custom-xs-to-sm-min-img-width-landscape;
+            }
+
+            @include media-breakpoint-up(xs) {
+                max-width: map-get($img-landscape, xs);
+            }
+
+            @include media-breakpoint-up(sm) {
+                max-width: map-get($img-landscape, sm);
+            }
+
+            @include media-breakpoint-up(md) {
+                margin-top: 0.5rem;
+                max-width: 1.4 * map-get($img-landscape, md);
+                margin-left: -0.7 * map-get($img-landscape, md) + 50%;
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-top: 0.5rem;
+                max-width: 1.4 * map-get($img-landscape, lg);
+                margin-left: -0.7 * map-get($img-landscape, lg) + 50%;
+            }
+        }
+
+        .img-portrait {
+            @include media-breakpoint-down(sm) {
+                min-width: $custom-xs-to-sm-min-img-width-portrait;
+            }
+
+            @include media-breakpoint-up(xs) {
+                max-width: map-get($img-portrait, xs);
+            }
+
+            @include media-breakpoint-up(sm) {
+                max-width: map-get($img-portrait, sm);
+            }
+
+            @include media-breakpoint-up(md) {
+                max-width: map-get($img-portrait, md);
+            }
+
+            @include media-breakpoint-up(lg) {
+                max-width: map-get($img-portrait, lg);
+            }
+        }
+
+        figcaption {
+            display: block;
+            margin: 0 auto;
+            font-style: italic;
+            font-size: 0.92rem;
+
+            // See codecaption, includeimage, includevideo shortcodes. There's a
+            // <p> markdown-generated block there.
+            > p {
+                margin-bottom: 0rem;
+            }
         }
     }
 

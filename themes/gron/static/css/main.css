@@ -19616,15 +19616,6 @@ h6,
   font-size: 1rem;
   font-style: italic; }
 
-/* Adding standard illustration classes to markup */
-.main-text-container .img-landscape, .main-text-container .img-landscape-bleed, .main-text-container .img-portrait {
-  display: block;
-  margin: 0 auto; }
-
-.main-text-container .img-landscape, .main-text-container .img-landscape-bleed {
-  max-height: 95vh;
-  object-fit: contain; }
-
 /* Buttons tend to be too close to each other when multilined on narrow screen */
 .small-button-list {
   line-height: 1.78125; }
@@ -19644,54 +19635,6 @@ font and make necessary adjustments. */
       font-size: 1.1rem;
       padding-right: 20px;
       padding-left: 20px; } }
-  .main-text-container .img-landscape {
-    max-width: 98%; }
-    @media (max-width: 767.98px) {
-      .main-text-container .img-landscape {
-        min-width: 80%; } }
-    @media (min-width: 560px) {
-      .main-text-container .img-landscape {
-        max-width: 95%; } }
-    @media (min-width: 768px) {
-      .main-text-container .img-landscape {
-        margin-top: 0.5rem;
-        max-width: 92%; } }
-    @media (min-width: 992px) {
-      .main-text-container .img-landscape {
-        margin-top: 0.5rem;
-        max-width: 92%; } }
-  .main-text-container .img-landscape-bleed {
-    max-width: 98%; }
-    @media (max-width: 767.98px) {
-      .main-text-container .img-landscape-bleed {
-        min-width: 80%; } }
-    @media (min-width: 560px) {
-      .main-text-container .img-landscape-bleed {
-        max-width: 95%; } }
-    @media (min-width: 768px) {
-      .main-text-container .img-landscape-bleed {
-        margin-top: 0.5rem;
-        max-width: 128.8%;
-        margin-left: -14.4%; } }
-    @media (min-width: 992px) {
-      .main-text-container .img-landscape-bleed {
-        margin-top: 0.5rem;
-        max-width: 128.8%;
-        margin-left: -14.4%; } }
-  .main-text-container .img-portrait {
-    max-width: 85%; }
-    @media (max-width: 767.98px) {
-      .main-text-container .img-portrait {
-        min-width: 65%; } }
-    @media (min-width: 560px) {
-      .main-text-container .img-portrait {
-        max-width: 73%; } }
-    @media (min-width: 768px) {
-      .main-text-container .img-portrait {
-        max-width: 69%; } }
-    @media (min-width: 992px) {
-      .main-text-container .img-portrait {
-        max-width: 66%; } }
   .main-text-container ul,
   .main-text-container ol {
     padding-left: 1.5rem; }
@@ -19710,16 +19653,75 @@ font and make necessary adjustments. */
         .main-text-container ol ul,
         .main-text-container ol ol {
           padding-left: 1.7rem; } }
-  .main-text-container figcaption {
+  .main-text-container figure.image, .main-text-container figure.video {
+    margin-bottom: 1rem; }
+  .main-text-container figure .img-landscape, .main-text-container figure .img-landscape-bleed {
+    max-height: 95vh;
+    object-fit: contain; }
+  .main-text-container figure .img-landscape,
+  .main-text-container figure .img-landscape-bleed,
+  .main-text-container figure .img-portrait {
+    display: block;
+    margin: 0 auto; }
+    .main-text-container figure .img-landscape img,
+    .main-text-container figure .img-landscape-bleed img,
+    .main-text-container figure .img-portrait img {
+      max-width: 100%; }
+  .main-text-container figure .img-landscape {
+    max-width: 98%; }
+    @media (max-width: 767.98px) {
+      .main-text-container figure .img-landscape {
+        min-width: 80%; } }
+    @media (min-width: 560px) {
+      .main-text-container figure .img-landscape {
+        max-width: 95%; } }
+    @media (min-width: 768px) {
+      .main-text-container figure .img-landscape {
+        margin-top: 0.5rem;
+        max-width: 92%; } }
+    @media (min-width: 992px) {
+      .main-text-container figure .img-landscape {
+        margin-top: 0.5rem;
+        max-width: 92%; } }
+  .main-text-container figure .img-landscape-bleed {
+    max-width: 98%; }
+    @media (max-width: 767.98px) {
+      .main-text-container figure .img-landscape-bleed {
+        min-width: 80%; } }
+    @media (min-width: 560px) {
+      .main-text-container figure .img-landscape-bleed {
+        max-width: 95%; } }
+    @media (min-width: 768px) {
+      .main-text-container figure .img-landscape-bleed {
+        margin-top: 0.5rem;
+        max-width: 128.8%;
+        margin-left: -14.4%; } }
+    @media (min-width: 992px) {
+      .main-text-container figure .img-landscape-bleed {
+        margin-top: 0.5rem;
+        max-width: 128.8%;
+        margin-left: -14.4%; } }
+  .main-text-container figure .img-portrait {
+    max-width: 85%; }
+    @media (max-width: 767.98px) {
+      .main-text-container figure .img-portrait {
+        min-width: 65%; } }
+    @media (min-width: 560px) {
+      .main-text-container figure .img-portrait {
+        max-width: 73%; } }
+    @media (min-width: 768px) {
+      .main-text-container figure .img-portrait {
+        max-width: 69%; } }
+    @media (min-width: 992px) {
+      .main-text-container figure .img-portrait {
+        max-width: 66%; } }
+  .main-text-container figure figcaption {
     display: block;
     margin: 0 auto;
     font-style: italic;
-    font-size: 0.92rem;
-    width: 98%; }
-    .main-text-container figcaption > p {
+    font-size: 0.92rem; }
+    .main-text-container figure figcaption > p {
       margin-bottom: 0rem; }
-  .main-text-container figure.image, .main-text-container figure.video {
-    margin-bottom: 1rem; }
   @media (min-width: 560px) {
     .main-text-container h1,
     .main-text-container h2,

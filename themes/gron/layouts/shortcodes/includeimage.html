@@ -21,9 +21,10 @@
 {{ $img_class := .Scratch.Get "img_class" }}
 
 <figure class="image">
+  <div class="{{ $img_class }}">
   <a href="{{ $img }}" data-lightbox="page_image">
     <img src="{{ $img }}"
-      {{ with .Get "alt" }}  alt="{{.}}" {{ end }} class="{{ $img_class }}"
+      {{ with .Get "alt" }}  alt="{{.}}" {{ end }}
       {{- with .Get "style" -}}
         style="{{ . }}"
       {{- end -}}/>
@@ -37,4 +38,5 @@
 
   </figcaption>
   {{ end }}
+  </div>
 </figure>

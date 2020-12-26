@@ -5,15 +5,16 @@
     <div class="video-embed">
       <iframe src="{{ $url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
-  </div>
+
   {{ if isset .Params "caption" }}
   {{/* NOTE(agronskiy) We must utilize a newlines inside figcaption to process it as
         Markdown due to specs */}}
   <figcaption class="imgcaption font-italic mt-1" markdown="span">
 
-  {{ .Get "caption" }}
+{{ .Get "caption" }}
 
   </figcaption>
   {{ end }}
+  </div>
 </figure>
 
