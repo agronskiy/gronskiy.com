@@ -355,8 +355,9 @@ experimentation playground[^experiment], which explores various combinations of 
 `/layouts/posts/list.html` is preferred, and if one deletes it, Hugo falls back to `/layouts/tags/list.html` *but* throws a warning
 when building the website:
 
-```terminfo
-➙  hugo serve
+```console
+>  hugo serve
+
 Start building sites …
 WARN 2020/12/15 10:41:26 found no layout file for "HTML" for kind "section":
 You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
