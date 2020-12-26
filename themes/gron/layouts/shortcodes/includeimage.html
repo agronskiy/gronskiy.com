@@ -21,13 +21,10 @@
 {{ $img_class := .Scratch.Get "img_class" }}
 
 <figure class="image">
-  <div class="{{ $img_class }}">
+  <div class="{{ $img_class }}" {{- with .Get "style" -}} style="{{ . }}" {{- end -}}>
   <a href="{{ $img }}" data-lightbox="page_image">
     <img src="{{ $img }}"
-      {{ with .Get "alt" }}  alt="{{.}}" {{ end }}
-      {{- with .Get "style" -}}
-        style="{{ . }}"
-      {{- end -}}/>
+      {{ with .Get "alt" }}  alt="{{.}}" {{ end }}/>
   </a>
   {{ if isset .Params "caption" }}
   {{/* NOTE(agronskiy) We must utilize blanklines inside figcaption to process it as
