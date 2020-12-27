@@ -31,9 +31,9 @@ to filter those – just as with normal tag.
 
 ## What Hugo can do
 
-Operating on *taxonomies* – which are hierarchies of tags – is where Hugo shines. Page kinds *taxonomy* and *taxonomyTerm* (explained below in a second) are first-class citizens in Hugo’s system of types.￼
+Operating on *taxonomies* – which are hierarchies of tags – is where Hugo shines. Page kinds *taxonomy* and *taxonomyTerm* (explained below in a second) are first-class citizens in Hugo’s system of types.
 
-To bring an example: with minimal modifications of your `config.yaml￼` (to be precise,in this particular example no modifications are needed – since “tags” is one of two default taxonomies￼), it is enough to add e.g.
+To bring an example: with minimal modifications of your `config.yaml￼` (to be precise,in this particular example no modifications are needed – since “tags” is one of two default taxonomies), it is enough to add e.g.
 ```yaml
 tag:
   - aviation
