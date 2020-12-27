@@ -329,6 +329,13 @@ font and make necessary adjustments. */
             font-size: 90%;
         }
     }
+
+    .post-table {
+        table {
+            @extend .table;
+            @extend .table-bordered;
+        }
+    }
 }
 
 /* Button style for tags etc. */
