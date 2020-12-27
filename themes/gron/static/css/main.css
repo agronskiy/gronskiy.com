@@ -20005,7 +20005,7 @@ code {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     padding: 4px 5px;
-    margin: 0rem 0rem 1rem; }
+    margin: 0; }
     @media (min-width: 768px) {
       code.hljs {
         padding: 7px 9px; } }
