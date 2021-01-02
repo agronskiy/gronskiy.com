@@ -58,9 +58,9 @@ window.MathJax = {
   tex: {
     inlineMath: [ ['$','$'], ["\\(","\\)"] ],
     displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-    processEscapes: false,
+    processEscapes: true,
     tagSide: "right",
-    tagIndent: "1rem",
+    tagIndent: '1rem',
     multlineWidth: "85%",
     tags: "ams"
   },
@@ -68,12 +68,16 @@ window.MathJax = {
     skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
   },
   chtml: {
-    scale: 0.95
+    scale: 0.9
+  },
+  svg: {
+    fontCache: 'global',        // or 'local' or 'none'
+    scale: 0.9,                // global scaling factor for all expressions
   }
 };
 </script>
 <script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
 
 {{ end }}
