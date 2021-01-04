@@ -53,31 +53,31 @@
 
 <!-- MathJax support -->
 {{- if isset .Params "mathjax" | and (eq (.Param "mathjax") true) }}
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-    processEscapes: true,
-    tagSide: "right",
-    tagIndent: "1rem",
-    multlineWidth: "85%",
-    tags: "ams"
-  },
-  options: {
-    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-  },
-  chtml: {
-    scale: 0.9
-  },
-  svg: {
-    fontCache: 'global',        // or 'local' or 'none'
-    scale: 0.9,                // global scaling factor for all expressions
-  }
-};
+<script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: "1rem",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                   autoNumber: "AMS",
+                },
+                unicode: {
+                   fonts: "STIXGeneral,'Arial Unicode MS'"
+                }
+            },
+            CommonHTML: {
+              scale: 95
+            },
+            showProcessingMessages: false,
+            messageStyle: "none"
+        });
 </script>
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
-
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 {{ end }}
