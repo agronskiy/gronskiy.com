@@ -515,7 +515,8 @@ code {
 
 .footnotes li,
 sup,
-mjx-mtd[id^="mjx-eqn"] {
+mjx-mtd[id^="mjx-eqn"],
+span[id^="mjx-eqn"] {
     position: relative;
 
     &::after {
