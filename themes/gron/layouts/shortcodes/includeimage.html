@@ -31,7 +31,7 @@
     Markdown due to specs */}}
   <figcaption class="imgcaption font-italic mt-1" markdown="span">
 
-  {{ .Get "caption" }}
+  {{ .Get "caption" | markdownify }}
 
   </figcaption>
   {{ end }}
