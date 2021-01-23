@@ -3,7 +3,7 @@
 {{- $img := .Get "img" -}}
 
 <!-- Checking that file exists -->
-{{- if not (fileExists (path.Join (path.Dir .Page.File.Path) $img)) -}}
+{{- if and (not (hasPrefix $img "http")) (not (fileExists (path.Join (path.Dir .Page.File.Path) $img))) -}}
     {{ errorf "[From %v] File could not be found %v" .Page.File.Path $img }}
 {{- end -}}
 
