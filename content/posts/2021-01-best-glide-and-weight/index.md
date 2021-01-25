@@ -6,7 +6,11 @@ date: 2021-01-25
 lang: en
 tags:
     - aviation
-summary:
+summary: >
+    Glide ratio is the distance a glider (aircraft without an engine or the engine switched off) covers
+    for each unit of altitude lost while descending – e.g. 14:1 means 14 km of distance per 1 km of altitude. ***Best***
+    glide ratio is the most optimal - the highest - one. In this post, we will try to give a simple yet correct explanation of why
+    this best glide ratio a) equals lift-to-drag ratio and b) does not depend on the weight of the aircraft.
 thumbnail: draw-ld.png
 mathjax: true
 hljs: false
