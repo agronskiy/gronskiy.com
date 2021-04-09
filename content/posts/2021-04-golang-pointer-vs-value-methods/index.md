@@ -155,7 +155,7 @@ As Ian Lance Taylor puts it (italic mine):
 >
 > {{% cite %}} By [Ian Lance Taylor – "Go interfaces"][ian] {{% /cite %}}
 
-A canonical way to call methods on interfaces is thus
+A canonical way to call methods on interfaces is thus (all the definitions are simple and can be found on [Github][github])
 ```go
 func callValueMethodOnInterface(v ValueMethodCaller) {
     v.valueMethod()
