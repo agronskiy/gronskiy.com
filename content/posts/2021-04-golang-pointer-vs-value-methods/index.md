@@ -447,9 +447,8 @@ Thanks to [Corentin Perret-Gentil](https://corentinperretgentil.gitlab.io) for v
     which, while convenient, is explicitly called "exception" in specs and generates a lot of confusion.
 
 [^cor]: Meme time (credit of Corentin for pointing to it):
-    <div>
-    <img src="https://pbs.twimg.com/media/DcvcASxX4AAQv56?format=jpg&name=large" style="width:50%"/>
-    </div>
+    <img src="https://pbs.twimg.com/media/DcvcASxX4AAQv56?format=jpg&name=large" class="rounded mx-auto d-block" style="width:50%"/>
+
 
 [go-spec]: https://golang.org/ref/spec#Method_sets
 
