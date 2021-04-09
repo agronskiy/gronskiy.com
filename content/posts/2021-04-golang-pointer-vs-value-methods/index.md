@@ -1,6 +1,6 @@
 ---
 title: 'Summary to the difference between T and T* method sets in Go'
-slug: 2020-04-golang-receivers
+slug: 2020-04-golang-pointer-vs-value-methods
 date: 2021-04-09
 lang: en
 tags:
@@ -409,7 +409,7 @@ of this blog and numerous confusions stem from this fact.
 ## Summary
 
 - With ordinary variables, Go allows calling "everything on everything": `pointer.pointerMethod()`, `pointer.valueMethod()`,
-    `value.valueMethod()` and `value.pointerMethod()`. Mechanisms engaged are automatic dereferencing and taking the address
+    `value.valueMethod()` and `value.pointerMethod()`. Mechanisms engaged are selectors and automatic dereferencing.
 - With interfaces, it is prohibited to assign value to an interface which has pointer methods.
 - The above behavior is formally regulated by the notions of method sets and addressability. Value type does not belong
     to pointer method sets because there value inside an interface is not addressable.
