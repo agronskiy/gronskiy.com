@@ -24903,12 +24903,27 @@ h6,
   }
 }
 
+/* Blockquotes */
+blockquote {
+  border-left: 2px solid #909090;
+  margin: 0 0 1rem 1px;
+  padding: 0rem 0.2rem 0rem 0.5rem;
+  font-weight: 300;
+}
+@media (min-width: 560px) {
+  blockquote {
+    padding-left: 1rem;
+  }
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
 /* This is the container for a one-column text blanket. We increase its
 font and make necessary adjustments. */
 .main-text-container {
   font-size: 1.05rem;
   /* Headers padding */
-  /* Blockquotes */
   /* Scaling maths for small devices */
 }
 @media (min-width: 768px) {
@@ -25057,20 +25072,6 @@ font and make necessary adjustments. */
 .main-text-container .h4 {
     margin-top: 1.5rem;
   }
-}
-.main-text-container blockquote {
-  border-left: 2px solid #909090;
-  margin: 0 0 1rem 1px;
-  padding: 0rem 0.2rem 0rem 0.5rem;
-  font-weight: 300;
-}
-@media (min-width: 560px) {
-  .main-text-container blockquote {
-    padding-left: 1rem;
-  }
-}
-.main-text-container blockquote p:last-child {
-  margin-bottom: 0;
 }
 .main-text-container .video-embed {
   position: relative;

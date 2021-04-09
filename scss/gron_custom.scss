@@ -133,6 +133,22 @@ h6,
     }
 }
 
+/* Blockquotes */
+blockquote {
+    border-left: 2px solid $custom-body-color-light;
+    margin: 0 0 1rem 1px;
+    padding: 0rem 0.2rem 0rem 0.5rem;
+    font-weight: $font-weight-light;
+
+    @include media-breakpoint-up(sm) {
+        padding-left: 1rem;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
 /* This is the container for a one-column text blanket. We increase its
 font and make necessary adjustments. */
 .main-text-container {
@@ -290,21 +306,6 @@ font and make necessary adjustments. */
         .h3,
         .h4 {
             margin-top: 1.5rem;
-        }
-    }
-    /* Blockquotes */
-    blockquote {
-        border-left: 2px solid $custom-body-color-light;
-        margin: 0 0 1rem 1px;
-        padding: 0rem 0.2rem 0rem 0.5rem;
-        font-weight: $font-weight-light;
-
-        @include media-breakpoint-up(sm) {
-            padding-left: 1rem;
-        }
-
-        p:last-child {
-            margin-bottom: 0;
         }
     }
 
