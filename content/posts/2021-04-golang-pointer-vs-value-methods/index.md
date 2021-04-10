@@ -399,7 +399,7 @@ bar(&val); // clear that something will be mutated
 ```
 
 So I'd take liberty and speculate here that the main and final reason for non-reference-binding behavior we have observed
-is to keep Go simple and have *everything* done by value. References just don't exists, because it feels like unnecessary
+is to keep Go simple and have *everything* done by value. References just don't exist in Go, because it feels like unnecessary
 complication.
 
 One can send me here to the beginning of my post where we started exploring the syntactic flexibility of the language, which
