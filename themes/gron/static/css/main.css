@@ -25123,7 +25123,7 @@ font and make necessary adjustments. */
 }
 
 .btn-tag::before {
-  content: "";
+  content: "\f02b";
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
@@ -25135,7 +25135,7 @@ font and make necessary adjustments. */
 }
 
 .btn-language::before {
-  content: "";
+  content: "\f0ac";
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
@@ -25147,7 +25147,7 @@ font and make necessary adjustments. */
 }
 
 .btn-year::before {
-  content: "";
+  content: "\f073";
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
@@ -25213,7 +25213,7 @@ abbr[data-original-title] {
 }
 
 .post-language::before {
-  content: "";
+  content: "\f0ac";
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
@@ -25236,7 +25236,7 @@ abbr[data-original-title] {
 }
 
 .post-tag::before {
-  content: "";
+  content: "\f02b";
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
