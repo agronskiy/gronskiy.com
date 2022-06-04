@@ -6,3 +6,4 @@ public/
 .sass-cache/
 
 content/posts/_unlisted/
+.DS_Store
