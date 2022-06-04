@@ -33,6 +33,7 @@ set -e
     # This builds
     (
         echo "Checking out gh-pages branch into public"
+        mkdir -p public
         cd public
 
         git fetch --all
