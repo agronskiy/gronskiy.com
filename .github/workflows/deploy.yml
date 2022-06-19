@@ -21,7 +21,7 @@ jobs:
       - name: Git checkout private part
         uses: actions/checkout@v2
         with:
-          repository: agronskiy/website-private
+          repository: agronskiy/agronskiy.github.io-private-posts
           token: ${{ secrets.GH_TOKEN }}
           ref: main
           path: content/posts/_unlisted
@@ -40,7 +40,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GH_TOKEN }}
-          external_repository: agronskiy/agronskiy.github.io
+          external_repository: agronskiy/agronskiy.github.io-serving
           publish_dir: ./public
           publish_branch: gh-pages
           cname: gronskiy.com
