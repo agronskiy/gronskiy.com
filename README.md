@@ -2,11 +2,6 @@
 
 Public part of the website https://gronskiy.com (excuding some private draft posts).
 
-Stack:
-
-- Hugo (`0.100.0`)
-- Bootstrap
-- 
 
 Random notes:
 
