@@ -14,7 +14,7 @@ summary: 'Our long paper on posterior agreement was published in *J. of TCS*'
 > Paper available through the Elsevier webpage of the [Journal of
 > Theoretical Computer Science](https://www.sciencedirect.com/science/article/pii/S0304397518302378).
 
-{{< includeimage img="agreement.jpg" caption=`Expected log-posterior
+{{% includeimage img="agreement.jpg" caption=`Expected log-posterior
 agreement allows to quantify the robustness of the Gibbs maximum-entropy
-posteriors for the given data.` >}}
+posteriors for the given data.` %}}
 

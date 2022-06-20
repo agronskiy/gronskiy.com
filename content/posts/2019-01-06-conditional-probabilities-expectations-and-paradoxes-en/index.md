@@ -18,7 +18,7 @@ mathjax: true
 >    probabilities and expectations. Will cover the problem of defining $P(Y \vert X = x)$ in case of $P(X = x) = 0$,
 >    describe the Borel-Kolmogorov paradox and give its intuitive explanation.
 
-{{< includeimage img="cond.png" caption="It is not that easy." >}}
+{{% includeimage img="cond.png" caption="It is not that easy." %}}
 
 ## Contents
 
@@ -144,8 +144,8 @@ We are now going to build the "paradox" by computing the conditional probability
 densities \eqref{eq:cond} on two of the so called [*great circles*](https://en.wikipedia.org/wiki/Great_circle):
 1) on the equator and 2) on the meridian.
 
-{{< includeimage img="great_circles.png"
-caption=`Credit of the image to [https://slideplayer.com/slide/9119414/](https://slideplayer.com/slide/9119414/)` >}}
+{{% includeimage img="great_circles.png"
+caption=`Credit of the image to [https://slideplayer.com/slide/9119414/](https://slideplayer.com/slide/9119414/)` %}}
 
 The joint distribution apparently has the density
 
@@ -245,9 +245,9 @@ $$
 </div>
 
 
-{{< includeimage img="bk-paradox-1.png" caption=`Visualization of defining the limiting ratio
+{{% includeimage img="bk-paradox-1.png" caption=`Visualization of defining the limiting ratio
 of $p(\lambda \vert \varphi = 0)$. The shape of the family of conditioning events (green),
-yields uniform ratio regardless of longitude.` >}}
+yields uniform ratio regardless of longitude.` %}}
 
 The green area denotes the denominator (i.e. conditioning) event
 $\varphi \in [0-\varepsilon, 0 + \varepsilon]$, and
@@ -268,9 +268,9 @@ $$
 $$
 </div>
 
-{{< includeimage img="bk-paradox-2.png" caption=`Visualization of defining the limiting ratio
+{{% includeimage img="bk-paradox-2.png" caption=`Visualization of defining the limiting ratio
 of $p(\varphi \vert \lambda = 0)$. The shape of the family of conditioning events (red),
-yields a non-uniform ratio which depends on the latitude.` >}}
+yields a non-uniform ratio which depends on the latitude.` %}}
 
 
 Now the variables are swapped compared to the previous case.

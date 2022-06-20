@@ -13,6 +13,12 @@ body {
     }
 }
 
+@include media-breakpoint-up(md) {
+    html {
+        overflow-y: scroll;
+    }
+}
+
 @include media-breakpoint-down(sm) {
     html,
     body {
@@ -52,98 +58,26 @@ ol {
     }
 
     @include media-breakpoint-up(lg) {
-        max-width: map-get($grid-breakpoints, lg) - 120px;
+        max-width: map-get($grid-breakpoints, lg) - 140px;
     }
 }
 
 /* Change margin and paddings for grid for mobile devices to more compact ones*/
 @include media-breakpoint-between(xs, sm) {
     .container {
-        padding-right: 0.3rem;
-        padding-left: 0.3rem;
-        margin-right: auto;
-        margin-left: auto;
+        padding-right: $custom-xs-grid-padding;
+        padding-left: $custom-xs-grid-padding;
     }
 
     .row {
-        margin-right: auto;
-        margin-left: auto;
-    }
+        margin-right: -$custom-xs-grid-padding;
+        margin-left: -$custom-xs-grid-padding;
 
-    .col-1,
-    .col-2,
-    .col-3,
-    .col-4,
-    .col-5,
-    .col-6,
-    .col-7,
-    .col-8,
-    .col-9,
-    .col-10,
-    .col-11,
-    .col-12,
-    .col,
-    .col-auto,
-    .col-sm-1,
-    .col-sm-2,
-    .col-sm-3,
-    .col-sm-4,
-    .col-sm-5,
-    .col-sm-6,
-    .col-sm-7,
-    .col-sm-8,
-    .col-sm-9,
-    .col-sm-10,
-    .col-sm-11,
-    .col-sm-12,
-    .col-sm,
-    .col-sm-auto,
-    .col-md-1,
-    .col-md-2,
-    .col-md-3,
-    .col-md-4,
-    .col-md-5,
-    .col-md-6,
-    .col-md-7,
-    .col-md-8,
-    .col-md-9,
-    .col-md-10,
-    .col-md-11,
-    .col-md-12,
-    .col-md,
-    .col-md-auto,
-    .col-lg-1,
-    .col-lg-2,
-    .col-lg-3,
-    .col-lg-4,
-    .col-lg-5,
-    .col-lg-6,
-    .col-lg-7,
-    .col-lg-8,
-    .col-lg-9,
-    .col-lg-10,
-    .col-lg-11,
-    .col-lg-12,
-    .col-lg,
-    .col-lg-auto,
-    .col-xl-1,
-    .col-xl-2,
-    .col-xl-3,
-    .col-xl-4,
-    .col-xl-5,
-    .col-xl-6,
-    .col-xl-7,
-    .col-xl-8,
-    .col-xl-9,
-    .col-xl-10,
-    .col-xl-11,
-    .col-xl-12,
-    .col-xl,
-    .col-xl-auto {
-        padding-right: 0.2rem;
-        padding-left: 0.2rem;
-        margin-right: auto;
-        margin-left: auto;
+        > .col,
+        > [class*="col-"] {
+            padding-right: $custom-xs-grid-padding;
+            padding-left: $custom-xs-grid-padding;
+        }
     }
 }
 
@@ -190,23 +124,28 @@ h6,
     font-style: italic;
 }
 
-/* Adding standard illustration classes to markup */
-%img-shared {
-    display: block;
-    margin: 0 auto;
-}
-
-%img-landscape-shared {
-    max-height: 95vh;
-    object-fit: contain;
-}
-
 /* Buttons tend to be too close to each other when multilined on narrow screen */
 .small-button-list {
     line-height: $custom-line-height * 1.25;
 
     @include media-breakpoint-up(sm) {
         line-height: $custom-line-height-sm * 1.2;
+    }
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 2px solid $custom-body-color-light;
+    margin: 0 0 1rem 1px;
+    padding: 0rem 0.2rem 0rem 0.5rem;
+    font-weight: $font-weight-light;
+
+    @include media-breakpoint-up(sm) {
+        padding-left: 1rem;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -219,86 +158,6 @@ font and make necessary adjustments. */
 
         padding-right: 20px;
         padding-left: 20px;
-    }
-
-    .img-landscape {
-        @extend %img-shared;
-        @extend %img-landscape-shared;
-
-        @include media-breakpoint-down(sm) {
-            min-width: $custom-xs-to-sm-min-img-width-landscape;
-        }
-
-        @include media-breakpoint-up(xs) {
-            max-width: map-get($img-landscape, xs);
-        }
-
-        @include media-breakpoint-up(sm) {
-            max-width: map-get($img-landscape, sm);
-        }
-
-        @include media-breakpoint-up(md) {
-            margin-top: 0.5rem;
-            max-width: map-get($img-landscape, md);
-        }
-
-        @include media-breakpoint-up(lg) {
-            margin-top: 0.5rem;
-            max-width: map-get($img-landscape, lg);
-        }
-    }
-
-    .img-landscape-bleed {
-        @extend %img-shared;
-        @extend %img-landscape-shared;
-
-        @include media-breakpoint-down(sm) {
-            min-width: $custom-xs-to-sm-min-img-width-landscape;
-        }
-
-        @include media-breakpoint-up(xs) {
-            max-width: map-get($img-landscape, xs);
-        }
-
-        @include media-breakpoint-up(sm) {
-            max-width: map-get($img-landscape, sm);
-        }
-
-        @include media-breakpoint-up(md) {
-            margin-top: 0.5rem;
-            max-width: 1.4 * map-get($img-landscape, md);
-            margin-left: -0.7 * map-get($img-landscape, md) + 50%;
-        }
-
-        @include media-breakpoint-up(lg) {
-            margin-top: 0.5rem;
-            max-width: 1.4 * map-get($img-landscape, lg);
-            margin-left: -0.7 * map-get($img-landscape, lg) + 50%;
-        }
-    }
-
-    .img-portrait {
-        @extend %img-shared;
-
-        @include media-breakpoint-down(sm) {
-            min-width: $custom-xs-to-sm-min-img-width-portrait;
-        }
-
-        @include media-breakpoint-up(xs) {
-            max-width: map-get($img-portrait, xs);
-        }
-
-        @include media-breakpoint-up(sm) {
-            max-width: map-get($img-portrait, sm);
-        }
-
-        @include media-breakpoint-up(md) {
-            max-width: map-get($img-portrait, md);
-        }
-
-        @include media-breakpoint-up(lg) {
-            max-width: map-get($img-portrait, lg);
-        }
     }
 
     ul,
@@ -319,16 +178,117 @@ font and make necessary adjustments. */
         }
     }
 
-    figcaption {
-        display: block;
-        margin: 0 auto;
-        font-style: italic;
-        font-size: 0.92rem;
-        width: 85%;
-    }
-
     figure {
-        margin-bottom: 1rem;
+        &.image,
+        &.video {
+            margin-bottom: 1rem;
+        }
+
+        // This is to avoid that large image gets larger than vertical viewport size.
+        %img-landscape-shared {
+            max-height: 95vh;
+            object-fit: contain;
+        }
+
+        .img-landscape,
+        .img-landscape-bleed,
+        .img-portrait {
+            display: block;
+            margin: 0 auto;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .img-landscape {
+            @extend %img-landscape-shared;
+
+            @include media-breakpoint-down(sm) {
+                min-width: $custom-xs-to-sm-min-img-width-landscape;
+            }
+
+            @include media-breakpoint-up(xs) {
+                max-width: map-get($img-landscape, xs);
+            }
+
+            @include media-breakpoint-up(sm) {
+                max-width: map-get($img-landscape, sm);
+            }
+
+            @include media-breakpoint-up(md) {
+                margin-top: 0.5rem;
+                max-width: map-get($img-landscape, md);
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-top: 0.5rem;
+                max-width: map-get($img-landscape, lg);
+            }
+        }
+
+        .img-landscape-bleed {
+            @extend %img-landscape-shared;
+
+            @include media-breakpoint-down(sm) {
+                min-width: $custom-xs-to-sm-min-img-width-landscape;
+            }
+
+            @include media-breakpoint-up(xs) {
+                max-width: map-get($img-landscape, xs);
+            }
+
+            @include media-breakpoint-up(sm) {
+                max-width: map-get($img-landscape, sm);
+            }
+
+            @include media-breakpoint-up(md) {
+                margin-top: 0.5rem;
+                max-width: 1.4 * map-get($img-landscape, md);
+                margin-left: -0.7 * map-get($img-landscape, md) + 50%;
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-top: 0.5rem;
+                max-width: 1.4 * map-get($img-landscape, lg);
+                margin-left: -0.7 * map-get($img-landscape, lg) + 50%;
+            }
+        }
+
+        .img-portrait {
+            @include media-breakpoint-down(sm) {
+                min-width: $custom-xs-to-sm-min-img-width-portrait;
+            }
+
+            @include media-breakpoint-up(xs) {
+                max-width: map-get($img-portrait, xs);
+            }
+
+            @include media-breakpoint-up(sm) {
+                max-width: map-get($img-portrait, sm);
+            }
+
+            @include media-breakpoint-up(md) {
+                max-width: map-get($img-portrait, md);
+            }
+
+            @include media-breakpoint-up(lg) {
+                max-width: map-get($img-portrait, lg);
+            }
+        }
+
+        figcaption {
+            display: block;
+            margin: 0 auto;
+            font-style: italic;
+            font-size: 0.92rem;
+
+            // See codecaption, includeimage, includevideo shortcodes. There's a
+            // <p> markdown-generated block there.
+            > p {
+                margin-bottom: 0rem;
+            }
+        }
     }
 
     /* Headers padding */
@@ -348,27 +308,12 @@ font and make necessary adjustments. */
             margin-top: 1.5rem;
         }
     }
-    /* Blockquotes */
-    blockquote {
-        border-left: 2px solid $custom-body-color-light;
-        margin: 0 0 1rem 1px;
-        padding: 0rem 0.2rem 0rem 0.5rem;
-        font-weight: $font-weight-light;
-
-        @include media-breakpoint-up(sm) {
-            padding-left: 1rem;
-        }
-
-        p:last-child {
-            margin-bottom: 0;
-        }
-    }
 
     .video-embed {
         position: relative;
         height: 0;
         overflow: hidden;
-        padding-bottom: 75%;
+        padding-bottom: 60%;
 
         iframe {
             position: absolute;
@@ -383,6 +328,13 @@ font and make necessary adjustments. */
     @include media-breakpoint-only(xs) {
         .MJXc-display {
             font-size: 90%;
+        }
+    }
+
+    .post-table {
+        table {
+            @extend .table;
+            @extend .table-bordered;
         }
     }
 }
@@ -548,6 +500,46 @@ abbr[data-original-title] {
     background-color: $custom-body-color-superlight;
 }
 
+code {
+    background-color: $custom-code-bg-color;
+}
+
+// Cudos to https://gist.github.com/danielpost/a0fa9d9046a885692346137b68babd54
+@keyframes highlight {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.footnotes li,
+sup,
+mjx-mtd[id^="mjx-eqn"],
+span[id^="mjx-eqn"] {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(color("blue"), 0.5);
+        opacity: 0;
+    }
+
+    &:target,
+    &:focus {
+        &::after {
+            animation: highlight 1.5s cubic-bezier(0.3, 0, 1, 0.7);
+        }
+    }
+}
+
 /* Footnotes style as generated by Goldmark.
 Kramdown generates <p> so we have to deal with that by using tricks from
 https://stackoverflow.com/questions/45462642/handling-paragraphs-inside-list-items-with-a-custom-css-content
@@ -555,18 +547,19 @@ https://stackoverflow.com/questions/45462642/handling-paragraphs-inside-list-ite
 
 $custom-footnote-width: 2.1rem;
 
-a.footnote-ref {
-    @include media-breakpoint-up(sm) {
-        font-size: $small-font-size;
+a {
+    &.footnote-ref {
+        @include media-breakpoint-up(sm) {
+            font-size: $small-font-size;
+        }
+        &::before {
+            content: "[";
+        }
+
+        &::after {
+            content: "]";
+        }
     }
-}
-
-a.footnote-ref::before {
-    content: "[";
-}
-
-a.footnote-ref::after {
-    content: "]";
 }
 
 .footnotes ol {
@@ -614,8 +607,4 @@ a.footnote-ref::after {
     a.footnote-backref:hover::after {
         text-decoration: underline;
     }
-}
-
-code {
-    background-color: $custom-code-bg-color;
 }

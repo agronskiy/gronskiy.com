@@ -40,7 +40,7 @@ markup:
       unsafe: true
   highlight:
     anchorLineNos: false
-    codeFences: true
+    codeFences: false # highlight.js conflicts with that
     guessSyntax: false
     hl_Lines: ""
     lineAnchors: ""

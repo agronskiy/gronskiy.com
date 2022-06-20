@@ -13,7 +13,7 @@ uncertainty: A generic approach") is out - a nice birthday
 present btw!'
 ---
 
-{{< includeimage img="jcss_paper.png" >}}
+{{% includeimage img="jcss_paper.png" %}}
 
 Our <a href="http://www.sciencedirect.com/science/article/pii/S002200001730212X">
 JCSS paper</a> ("Robust optimization in the presence of

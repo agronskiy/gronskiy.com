@@ -1,0 +1,14 @@
+<figure class="code">
+{{/* NOTE(agronskiy) We must utilize blanklines inside figcaption to process it as
+    Markdown due to specs */}}
+  <figcaption class="font-italic mb-1">
+
+{{ .Get 0 }}:
+
+  </figcaption>
+  <div>
+
+{{ .Inner }}
+
+  </div>
+</figure>

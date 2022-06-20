@@ -19,9 +19,9 @@ $grid-breakpoints: (
 );
 
 $font-family-monospace: "Fira Mono", "Monaco", "Consolas", "Lucida Console", monospace;
-$code-font-size: 92%;
 $code-color: $gray-900;
 
+$custom-body-color-dark-grey: #4b4b4b;
 $custom-body-color: #606060;
 $custom-body-color-light: #909090;
 $custom-body-color-superlight: #efefef;
@@ -35,12 +35,14 @@ $custom-line-height-sm: $line-height-lg;
 $custom-xs-to-sm-min-img-width-landscape: 80%;
 $custom-xs-to-sm-min-img-width-portrait: 65%;
 
+$custom-code-bold-weight: 500;
+
 $img-landscape: (
     xs: 98%,
-    sm: 92%,
-    md: 89%,
-    lg: 84%,
-    xl: 84% // not used,,
+    sm: 95%,
+    md: 92%,
+    lg: 92%,
+    xl: 90%,
 );
 
 $img-portrait: (
@@ -48,7 +50,13 @@ $img-portrait: (
     sm: 73%,
     md: 69%,
     lg: 66%,
-    xl: 66% // not used,,
+    xl: 66%,
 );
 
+// Padding / margin for flex grid on extra-small devices (xs to sm).
+$custom-xs-grid-padding: 0.45rem;
+
+// This goes AFTER everything
 @import "node_modules/bootstrap/scss/bootstrap";
+
+// ADD NOTHING here (bootstrap import must go last here).

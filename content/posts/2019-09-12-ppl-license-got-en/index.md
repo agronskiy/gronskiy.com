@@ -14,9 +14,9 @@ summary: 'It took 3 years but was totally worth it'
 > I am a pilot now! Thanks to [SWISS Flying Club](http://www.swissflyingclub.ch) for
 > making that possible!
 
-{{< includeimage bleed=false img="got-ppl.jpg"
+{{% includeimage bleed=false img="got-ppl.jpg"
 caption=`This was hard, sometimes discouraging, sometimes inspiring. Without support of
 my closest people — just impossible. I keep
 my Telegram channel (Russian) <a href='https://t.me/crosswindlanding'>Crosswind Landing</a>
-alive to continue telling more stories from that wonderful aviation world.` >}}
+alive to continue telling more stories from that wonderful aviation world.` %}}
 
