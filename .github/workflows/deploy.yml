@@ -25,6 +25,10 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.100.0"
+      
+
+      - name: Generate tags 
+        run: ./bin/generate-tags.sh
 
       - name: Build website
         # remove --minify tag if you do not need it
