@@ -1,8 +1,6 @@
 // Reads the "posts" directory recursively, analyses YAML frontmatter, extracts tags
 // and then generates necessary family of files into "tags" directory
 
-// TODO(agronskiy, 2020-11): create a "Parallelizer" package, opensource
-
 package main
 
 import (
@@ -120,6 +118,10 @@ func worker(
 
 	for path := range inputQueue {
 
+		if strings.Contains(string(path), "README.md") {
+			return
+		}
+
 		if strings.Contains(string(path), "_unlisted") {
 			return
 		}
@@ -127,6 +129,9 @@ func worker(
 		m := front.NewMatter()
 		m.Handle("---", front.YAMLHandler)
 		file, err := os.Open(string(path))
+		if err != nil {
+			panic(err)
+		}
 		f, _, err := m.Parse(file)
 		if err != nil {
 			panic(err)
