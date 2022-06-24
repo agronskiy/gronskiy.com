@@ -16,7 +16,7 @@ jobs:
       - name: Git checkout private part
         uses: actions/checkout@v2
         with:
-          repository: agronskiy/agronskiy.github.io-private-posts
+          repository: agronskiy/gronskiy.com-private-posts
           token: ${{ secrets.GH_TOKEN }}
           ref: main
           path: content/posts/_unlisted
