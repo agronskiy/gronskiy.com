@@ -34,6 +34,9 @@ outputFormats:
   RSS:
     baseName: "rss"
 
+ignoreFiles:
+  - README\.md$
+
 markup:
   goldmark:
     renderer:
