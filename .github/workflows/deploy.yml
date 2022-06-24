@@ -26,7 +26,7 @@ jobs:
         with:
           hugo-version: "0.100.0"
       
-
+     # Generates post tags, see `./bin/tags-gen`
       - name: Generate tags 
         run: ./bin/generate-tags.sh
 
@@ -39,7 +39,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GH_TOKEN }}
-          external_repository: agronskiy/agronskiy.github.io-serving
+          external_repository: agronskiy/gronskiy.com-serving
           publish_dir: ./public
           publish_branch: gh-pages
           cname: gronskiy.com
