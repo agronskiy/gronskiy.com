@@ -9,10 +9,6 @@ menu:
       name: "About"
       url: "/"
       weight: 10
-    - identifier: projects
-      name: "Projects"
-      url: "/projects"
-      weight: 20
     - identifier: posts
       name: "Posts"
       url: "/posts"
