@@ -265,7 +265,8 @@ callPointerMethodOnInterface(val)
 *the intention* of calling pointer method could (with high confidence – otherwise why use pointer method!) be to modify
 the object.
 
-**Go interfaces hold copies:** And here comes the cornerstone: an implicit creation of the `ValueMethodCaller`
+**Go interfaces hold copies:** And here comes the cornerstone: an implicit creation of the
+`PointerMethodCaller`
 interface which happens when passing argument, actually *copies* `val` object! Hence any method calls inside the
 `callPointerMethodOnInterface()` would be performed on a copy of `val` and are lost on the original object.
 
@@ -421,7 +422,9 @@ of this blog and numerous confusions stem from this fact.
 
 ## Acknowledgements
 
-Thanks to [Corentin Perret-Gentil](https://corentinperretgentil.gitlab.io) for valuable review comments on this!
+Thanks to [Corentin Perret-Gentil](https://corentinperretgentil.gitlab.io) for valuable review
+comments on this, and [Dragan Dulic](https://www.linkedin.com/in/dragan-dulic-9abba5174) for
+catching typos.
 
 [^empty]: If one declares `T` as
     ```go
