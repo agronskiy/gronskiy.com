@@ -25074,6 +25074,8 @@ font and make necessary adjustments. */
   }
 }
 .main-text-container .video-embed {
+  display: block;
+  margin: 0 auto;
   position: relative;
   height: 0;
   overflow: hidden;

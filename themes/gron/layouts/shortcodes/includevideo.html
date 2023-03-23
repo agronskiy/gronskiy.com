@@ -1,7 +1,14 @@
 {{ $url := .Get "url"}}
 
+{{- if and (isset .Params "bleed") (eq (.Get "bleed") "true") -}}
+  {{- .Scratch.Set "img_class" "img-landscape-bleed" -}}
+{{- else -}}
+  {{- .Scratch.Set "img_class" "img-landscape" -}}
+{{- end -}}
+{{ $img_class := .Scratch.Get "img_class" }}
+
 <figure class="video">
-  <div class="img-landscape">
+  <div class={{ $img_class }}>
     <div class="video-embed">
       <iframe src="{{ $url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
