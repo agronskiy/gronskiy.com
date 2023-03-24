@@ -3,6 +3,14 @@
 {{- $file := .Get "file" -}}
 {{- $id := .Get "id" -}}
 
+<!-- Parse opts if they are set, see https://github.com/asciinema/asciinema-player#basic-usage -->
+{{- if isset .Params "opts" -}}
+{{- .Scratch.Set "opts" ( .Get "opts" ) -}}
+{{- else -}}
+{{- .Scratch.Set "opts" "{}" -}}
+{{- end -}}
+{{ $opts := .Scratch.Get "opts" }}
+
 <!-- Checking that file exists -->
 {{- if and (not (hasPrefix $file "http")) (not (fileExists (path.Join (path.Dir .Page.File.Path) $file))) -}}
     {{ errorf "[From %v] File could not be found %v" .Page.File.Path $file }}
@@ -37,6 +45,6 @@
 
 <!-- Create ascii player -->
 <script>
-  AsciinemaPlayer.create('{{ $file }}', document.getElementById('{{ $id }}'));
+  AsciinemaPlayer.create('{{ $file }}', document.getElementById('{{ $id }}'), {{ safeJS (printf "%s" $opts) }});
 </script>
 

@@ -1,0 +1,9 @@
+// Kudos to https://www.tonylykke.com/posts/2018/06/18/custom-fonts-in-asciinema/
+@font-face {
+    font-family: "Terminal Glyphs";
+    src: url("/fonts/asciinema-subset.ttf") format("truetype");
+}
+
+.asciinema-terminal {
+    font-family: 'Terminal Glyphs', Consolas, Menlo, 'Bitstream Vera Sans Mono', monospace, 'Powerline Symbols';
+}

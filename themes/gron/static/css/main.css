@@ -25016,9 +25016,9 @@ font and make necessary adjustments. */
 @media (min-width: 768px) {
   .main-text-container figure .img-landscape-bleed {
     margin-top: 0.5rem;
-    max-width: 119.6%;
-    margin-left: -59.8%;
-    margin-right: -59.8%;
+    max-width: 768px;
+    margin-left: -384px;
+    margin-right: -384px;
     left: 50%;
     right: 50%;
     position: relative;
@@ -25027,9 +25027,9 @@ font and make necessary adjustments. */
 @media (min-width: 992px) {
   .main-text-container figure .img-landscape-bleed {
     margin-top: 0.5rem;
-    max-width: 128.8%;
-    margin-left: -64.4%;
-    margin-right: -64.4%;
+    max-width: 992px;
+    margin-left: -496px;
+    margin-right: -46%;
     left: 50%;
     right: 50%;
     position: relative;
@@ -25356,6 +25356,14 @@ a.footnote-ref::after {
 }
 .footnotes ol a.footnote-backref:hover::after {
   text-decoration: underline;
+}
+
+@font-face {
+  font-family: "Terminal Glyphs";
+  src: url("/fonts/asciinema-subset.ttf") format("truetype");
+}
+.asciinema-terminal {
+  font-family: "Terminal Glyphs", Consolas, Menlo, "Bitstream Vera Sans Mono", monospace, "Powerline Symbols";
 }
 
 code {
