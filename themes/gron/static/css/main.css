@@ -25016,15 +25016,23 @@ font and make necessary adjustments. */
 @media (min-width: 768px) {
   .main-text-container figure .img-landscape-bleed {
     margin-top: 0.5rem;
-    max-width: 128.8%;
-    margin-left: -14.4%;
+    max-width: 119.6%;
+    margin-left: -59.8%;
+    margin-right: -59.8%;
+    left: 50%;
+    right: 50%;
+    position: relative;
   }
 }
 @media (min-width: 992px) {
   .main-text-container figure .img-landscape-bleed {
     margin-top: 0.5rem;
     max-width: 128.8%;
-    margin-left: -14.4%;
+    margin-left: -64.4%;
+    margin-right: -64.4%;
+    left: 50%;
+    right: 50%;
+    position: relative;
   }
 }
 .main-text-container figure .img-portrait {
@@ -25074,8 +25082,6 @@ font and make necessary adjustments. */
   }
 }
 .main-text-container .video-embed {
-  display: block;
-  margin: 0 auto;
   position: relative;
   height: 0;
   overflow: hidden;

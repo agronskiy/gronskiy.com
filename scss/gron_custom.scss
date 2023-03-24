@@ -195,7 +195,6 @@ font and make necessary adjustments. */
         .img-portrait {
             display: block;
             margin: 0 auto;
-
             img {
                 max-width: 100%;
             }
@@ -244,14 +243,22 @@ font and make necessary adjustments. */
 
             @include media-breakpoint-up(md) {
                 margin-top: 0.5rem;
-                max-width: 1.4 * map-get($img-landscape, md);
-                margin-left: -0.7 * map-get($img-landscape, md) + 50%;
+                max-width: 1.3 * map-get($img-landscape, md);
+                margin-left: -0.65 * map-get($img-landscape, md); 
+                margin-right: -0.65 * map-get($img-landscape, md);
+                left: 50%;
+                right: 50%; 
+                position: relative;
             }
 
             @include media-breakpoint-up(lg) {
                 margin-top: 0.5rem;
                 max-width: 1.4 * map-get($img-landscape, lg);
-                margin-left: -0.7 * map-get($img-landscape, lg) + 50%;
+                margin-left: -0.7 * map-get($img-landscape, lg); 
+                margin-right: -0.7 * map-get($img-landscape, lg);
+                left: 50%;
+                right: 50%; 
+                position: relative;
             }
         }
 

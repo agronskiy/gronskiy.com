@@ -51,6 +51,14 @@
 <script>hljs.initHighlightingOnLoad();</script>
 {{- end -}}
 
+<!-- asciinema-player.js -->
+<!-- see https://github.com/asciinema/asciinema-player#use-standalone-player-bundle-in-your-html-page -->
+{{- if isset .Params "asciinema" | and (eq (.Param "asciinema") true) }}
+<link rel="stylesheet" type="text/css"
+      href="/css/asciinema-player.css">
+<script src="/js/asciinema-player.min.js"></script>
+{{- end -}}
+
 <!-- MathJax support -->
 {{- if isset .Params "mathjax" | and (eq (.Param "mathjax") true) }}
 <script type="text/x-mathjax-config">
@@ -82,34 +90,3 @@
 <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_CHTML' async></script>
 {{ end }}
 
-<!-- MathJax support -->
-<!--{{- if isset .Params "mathjax" | and (eq (.Param "mathjax") true) }}
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-    processEscapes: true,
-    tagSide: "right",
-    tagIndent: '1rem',
-    multlineWidth: "85%",
-    tags: "ams"
-  },
-  options: {
-    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-  },
-  chtml: {
-    scale: 0.9
-  },
-  svg: {
-    fontCache: 'global',        // or 'local' or 'none'
-    scale: 0.9,                // global scaling factor for all expressions
-  }
-};
-</script>
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
-{{ end }}
--->

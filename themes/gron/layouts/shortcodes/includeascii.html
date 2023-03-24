@@ -1,0 +1,42 @@
+<!-- Inspired by https://eduardoboucas.com/blog/2014/12/07/including-and-managing-images-in-jekyll.html -->
+
+{{- $file := .Get "file" -}}
+{{- $id := .Get "id" -}}
+
+<!-- Checking that file exists -->
+{{- if and (not (hasPrefix $file "http")) (not (fileExists (path.Join (path.Dir .Page.File.Path) $file))) -}}
+    {{ errorf "[From %v] File could not be found %v" .Page.File.Path $file }}
+{{- end -}}
+
+<!-- Image class -->
+{{- if isset .Params "portrait" -}}
+  {{- .Scratch.Set "img_class" "img-portrait" -}}
+{{- else -}}
+  {{- if and (isset .Params "bleed") (eq (.Get "bleed") "true") -}}
+    {{- .Scratch.Set "img_class" "img-landscape-bleed" -}}
+  {{- else -}}
+    {{- .Scratch.Set "img_class" "img-landscape" -}}
+  {{- end -}}
+{{- end -}}
+
+{{ $img_class := .Scratch.Get "img_class" }}
+
+<figure class="image">
+  <div class="{{ $img_class }}" id="{{ $id }}" {{- with .Get "style" -}} style="{{ . }}" {{- end -}}>
+  {{ if isset .Params "caption" }}
+  {{/* NOTE(agronskiy) We must utilize blanklines inside figcaption to process it as
+    Markdown due to specs */}}
+  <figcaption class="imgcaption font-italic mt-1" markdown="span">
+
+  {{ .Get "caption" | markdownify }}
+
+  </figcaption>
+  {{ end }}
+  </div>
+</figure>
+
+<!-- Create ascii player -->
+<script>
+  AsciinemaPlayer.create('{{ $file }}', document.getElementById('{{ $id }}'));
+</script>
+
