@@ -25362,8 +25362,12 @@ a.footnote-ref::after {
   font-family: "Terminal Glyphs";
   src: url("/fonts/asciinema-subset.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Menlo Glyphs";
+  src: url("/fonts/menlo-subset.ttf") format("truetype");
+}
 .asciinema-terminal {
-  font-family: "Terminal Glyphs", Consolas, Menlo, "Bitstream Vera Sans Mono", monospace, "Powerline Symbols";
+  font-family: "Terminal Glyphs", "Menlo Glyphs", Consolas, Menlo, "Bitstream Vera Sans Mono", monospace, "Powerline Symbols";
 }
 
 code {

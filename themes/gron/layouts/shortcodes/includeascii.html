@@ -30,7 +30,8 @@
 {{ $img_class := .Scratch.Get "img_class" }}
 
 <figure class="image">
-  <div class="{{ $img_class }}" id="{{ $id }}" {{- with .Get "style" -}} style="{{ . }}" {{- end -}}>
+  <div class="{{ $img_class }}" {{- with .Get "style" -}} style="{{ . }}" {{- end -}}>
+    <div id="{{ $id }}"></div> 
   {{ if isset .Params "caption" }}
   {{/* NOTE(agronskiy) We must utilize blanklines inside figcaption to process it as
     Markdown due to specs */}}
