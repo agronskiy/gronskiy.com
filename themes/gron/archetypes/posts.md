@@ -13,6 +13,7 @@ summary: >-
 thumbnail:
 mathjax: false
 hljs: false
+asciinema: false 
 
 # For info, these are mostly not needed:
 # draft: true
