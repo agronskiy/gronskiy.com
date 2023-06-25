@@ -1,5 +1,5 @@
 ---
-title: Copying to clipboard via vim-tmux-ssh chain
+title: Seamless copy-paste between  tmux, vim an d clipboard over ssh
 slug: 2023-03-26-copy-via-vim-tmux-ssh
 date: 2023-03-26
 lang: en
@@ -8,7 +8,7 @@ tags:
     - vim
 summary: >-
   Allowing to copy into local clipboard over the `vim → tmux → ssh` chain (possibly multiple hops
-  if working on a remote of the remote) increased my productivity from 95% to 100% :)
+  if working on a remote box from a remote box) increased my productivity from 95% to 100% :)
 mathjax: false
 hljs: true
 asciinema: true
@@ -17,8 +17,8 @@ asciinema: true
 
 > **TL;DR**
 >
-> I spend a majority of my development in terminal: from my Mac which acts as a thin client, I stay over `ssh` into `tmux` on
-  my main Linux workstation and numerous other boxes, with my main IDE being `neovim`. Sometimes, from
+> I spend a majority of my development in terminal: from my Mac which acts as a thin development client, I stay over `ssh` into `tmux` on
+  my main Linux workstation and numerous other boxes, with my main IDE a.k.a. `neovim` running remotely. Sometimes, from
   that `tmux` I connect over another `ssh` and fire `tmux` on a box over two hops from my cosy Mac.
 > 
 > This worked smoothly with one common caveat: I need to be able, from time to time, to select-and-copy into my local
