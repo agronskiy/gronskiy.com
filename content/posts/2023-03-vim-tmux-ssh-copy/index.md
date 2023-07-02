@@ -1,5 +1,5 @@
 ---
-title: Seamless copy-paste between  tmux, vim an d clipboard over ssh
+title: Seamless copy-paste between  tmux, vim and clipboard over ssh
 slug: 2023-03-26-copy-via-vim-tmux-ssh
 date: 2023-03-26
 lang: en
