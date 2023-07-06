@@ -10,7 +10,7 @@
     {{- end -}}
 {{- end -}}
 
-{{- $limit := 5 -}}
+{{- $limit := 100 -}}
 {{- $pagesToShow = first $limit $pagesToShow -}}
 
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
