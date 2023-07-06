@@ -186,12 +186,12 @@ First, I can't help citing a *beautiful* online book "See How It Flies" written 
 
 <blockquote>
 
-  The lightly-loaded gliding airplane will have the same angle of descent, the same direction of flight, and the same total gliding distance, as indicated in [figure 2.18](http://www.av8n.com/how/htm/aoa.html#fig-weighted-glider). The only difference is that it will have a slower descent rate and a slower forward speed; this is indicated in the figure by stopwatches that show how long it takes the plane to reach a particular point.
+The lightly-loaded gliding airplane will have the same angle of descent, the same direction of flight, and the same total gliding distance, as indicated in [figure 2.18](http://www.av8n.com/how/htm/aoa.html#fig-weighted-glider). The only difference is that it will have a slower descent rate and a slower forward speed; this is indicated in the figure by stopwatches that show how long it takes the plane to reach a particular point.
 
-  {{% includeimage img="weighted-glider.png" style="width: 254px"
+{{% includeimage img="weighted-glider.png" style="width: 254px"
               caption=`© John S. Denker, [source](http://www.av8n.com/how/htm/aoa.html#fig-weighted-glider)` %}}
 
- {{% cite %}}From [http://www.av8n.com](http://www.av8n.com/how/htm/aoa.html#sec-weight-drag-speed){{% /cite %}}
+{{% cite %}}From [http://www.av8n.com](http://www.av8n.com/how/htm/aoa.html#sec-weight-drag-speed){{% /cite %}}
 
 </blockquote>
 
@@ -199,18 +199,18 @@ Second, another citation of a wonderful source, old but good "Aerodynamics for n
 
 <blockquote>
 
-  Any angle of attack lower or higher
-    than that for $(L/D)_\text{max}$ reduces the lift-drag
-    ratio and consequently increases -the total
-    drag for a given airplane lift. \
-    <...>
-    However, a change’ in gross
-    weight would require a change in airspeed to
-    support the new weight at the same lift coefficient and angle of attack.
+Any angle of attack lower or higher
+than that for $(L/D)_\text{max}$ reduces the lift-drag
+ratio and consequently increases -the total
+drag for a given airplane lift. \
+<...> \
+However, a change’ in gross
+weight would require a change in airspeed to
+support the new weight at the same lift coefficient and angle of attack.
 
-  {{% includeimage img="naval.png" caption=`Screenshot of "Aerodynamics for naval aviators"` %}}
+{{% includeimage img="naval.png" caption=`Screenshot of "Aerodynamics for naval aviators"` %}}
 
- {{% cite %}}From [p. 28 of "Aerodynamics for naval aviators"](https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/media/00-80t-80.pdf){{% /cite %}}
+{{% cite %}}From [p. 28 of "Aerodynamics for naval aviators"](https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/media/00-80t-80.pdf){{% /cite %}}
 
 </blockquote>
 
