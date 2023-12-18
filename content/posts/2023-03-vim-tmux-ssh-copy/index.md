@@ -36,6 +36,15 @@ vice versa from remote <code>vim</code> into local <code>tmux + vim</code>.` %}}
 
 {{% toc %}}
 
+> **(UPD 2023-12)**
+> 
+> As of `neovim 10.0`, per the claim of the plugin creators, the below plugins are not needed anymore.
+> Though, quick skimming over the web seems to report that the `10.0` is still sluggish/unstable.
+>
+> Another note is that the usage of the [`vim-OSCYank`][yank], (not [`nvim-osc52`][nvim]) seemed to 
+> produce issues on MacOS for me, where yanking whole line (`yy`) with subsequent pasting it resulted 
+  in pasting it into the cursor's line, not on the new line. Swiching to [`nvim-osc52`][nvim] fixed the problem, below I post the Lua config as well.
+
 ## Out of scope
 
 As mentioned, we'll be setting up the ability to copy things *downstream*, i.e. over one or several `tmux`/`ssh` hops
@@ -56,9 +65,10 @@ that trivializes sending the OSC52-enriched messages to the local terminal emula
 ### Set up the `vim-oscyank` 
 
 In your `init.lua` or equivalent, you'd need to add the `vim-oscyank` plugin [see here][yank], and set it up along 
-the following lines (here, the syntax is `Packer.nvim`s one):
+the following lines:
 ```lua
-use { "ojroques/vim-oscyank",
+{ 
+  "ojroques/vim-oscyank",
   config = function()
     -- Should be accompanied by a setting clipboard in tmux.conf, also see
     -- https://github.com/ojroques/vim-oscyank#the-plugin-does-not-work-with-tmux
@@ -78,6 +88,28 @@ use { "ojroques/vim-oscyank",
 }
 ```
 
+(added 2023-12, see UPD) For the Lua version of the plugin (see UPD above), the config would be the following
+```lua
+{
+  "ojroques/nvim-osc52",
+  config = function()
+    require("osc52").setup {
+      max_length = 0,          -- Maximum length of selection (0 for no limit)
+      silent = false,          -- Disable message on successful copy
+      trim = false,            -- Trim surrounding whitespaces before copy
+      tmux_passthrough = true, -- Use tmux passthrough (requires tmux: set -g allow-passthrough on)
+    }
+    local function copy()
+      if ((vim.v.event.operator == "y" or vim.v.event.operator == "d")
+        and vim.v.event.regname == "") then
+        require("osc52").copy_register("")
+      end
+    end
+
+    vim.api.nvim_create_autocmd("TextYankPost", { callback = copy })
+  end,
+}
+```
 
 ### Set up the `tmux`
 
@@ -85,6 +117,8 @@ To enable interoperation of `tmux` with the clipboard, set in your `.tmux.conf`:
 ```bash
 # Allow clipboard with OSC-52 work, see https://github.com/tmux/tmux/wiki/Clipboard
 set -s set-clipboard on
+# UPD: added for the Lua version.
+set -g allow-passthrough on
 ```
 
 Additionally, I prefer to set `y` in `tmux` scroll mode for copying:
