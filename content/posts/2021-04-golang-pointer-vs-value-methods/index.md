@@ -82,6 +82,7 @@ Pointer created on      main.T{i:0} with address 0xc0000180b2
 Value method called on         main.T{i:0} with address 0xc0000180e0   # note a copy is created
 Pointer method called on       main.T{i:0} with address 0xc0000180b2
 ```
+{{% /codecaption %}}
 
 ### How methods can be called on various receivers
 
