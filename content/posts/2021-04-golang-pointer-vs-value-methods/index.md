@@ -377,7 +377,7 @@ is justified by this implementation detail.
 ### Because Go is designed for simplicity – reference behavior is unwanted
 
 In the end of the day, let's face it: one *could* have designed a structure which allows taking the pointer of the underlying
-value – an doing ot safely, via all the indirections. This mechanism is well-known to C++ programmers: references. In C++,
+value – an doing it safely, via all the indirections. This mechanism is well-known to C++ programmers: references. In C++,
 writing
 ```cpp
 int x = 10;
@@ -422,8 +422,8 @@ of this blog and numerous confusions stem from this fact.
 
 ## Acknowledgements
 
-Thanks to [Corentin Perret-Gentil](https://corentinperretgentil.gitlab.io) for valuable review
-comments on this, and [Dragan Dulic](https://www.linkedin.com/in/dragan-dulic-9abba5174) for
+Thanks to [Corentin Perret-Gentil](https://corentinperretgentil.gitlab.io) for valuable pre-publish review
+comments on this, [Dragan Dulic](https://www.linkedin.com/in/dragan-dulic-9abba5174) and Jinwook Jeong for
 catching typos.
 
 [^empty]: If one declares `T` as
