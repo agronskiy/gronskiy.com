@@ -97,7 +97,6 @@ the following lines:
       max_length = 0,          -- Maximum length of selection (0 for no limit)
       silent = false,          -- Disable message on successful copy
       trim = false,            -- Trim surrounding whitespaces before copy
-      tmux_passthrough = true, -- Use tmux passthrough (requires tmux: set -g allow-passthrough on)
     }
     local function copy()
       if ((vim.v.event.operator == "y" or vim.v.event.operator == "d")
@@ -117,8 +116,6 @@ To enable interoperation of `tmux` with the clipboard, set in your `.tmux.conf`:
 ```bash
 # Allow clipboard with OSC-52 work, see https://github.com/tmux/tmux/wiki/Clipboard
 set -s set-clipboard on
-# UPD: added for the Lua version.
-set -g allow-passthrough on
 ```
 
 Additionally, I prefer to set `y` in `tmux` scroll mode for copying:
