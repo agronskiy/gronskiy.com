@@ -25362,16 +25362,20 @@ a.footnote-ref::after {
   font-family: "Terminal Glyphs";
   src: url("/fonts/asciinema-subset.ttf") format("truetype");
 }
-@font-face {
-  font-family: "Menlo Glyphs";
-  src: url("/fonts/menlo-subset.ttf") format("truetype");
-}
 .asciinema-terminal {
-  font-family: "Terminal Glyphs", "Menlo Glyphs", Consolas, Menlo, "Bitstream Vera Sans Mono", monospace, "Powerline Symbols";
+  font-family: Consolas, Menlo, "Bitstream Vera Sans Mono", monospace, "Powerline Symbols", "Terminal Glyphs";
 }
 
 code {
   font-size: 92%;
+  border-style: solid;
+  border-width: 0.5px;
+  background-color: #f2f2f2;
+  border-color: #c2c2c2;
+  padding: 2px 3px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
 }
 @media (min-width: 768px) {
   code {
