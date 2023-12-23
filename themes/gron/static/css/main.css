@@ -25372,10 +25372,15 @@ code {
   border-width: 0.5px;
   background-color: #f2f2f2;
   border-color: #c2c2c2;
-  padding: 2px 3px;
+  padding: 0.1rem 0.3rem;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
+}
+@media (max-width: 991.98px) {
+  code {
+    padding: 0 0.3rem;
+  }
 }
 @media (min-width: 768px) {
   code {

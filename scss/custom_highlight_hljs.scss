@@ -5,7 +5,11 @@ code {
     border-width: .5px;
     background-color: $custom-code-bg-color;
     border-color: $custom-code-border-color;
-    padding: 0;
+    padding: 0.1rem 0.3rem;
+    @include media-breakpoint-down(md) {
+        // on small devices, the box around overlaps with the next line
+        padding: 0 0.3rem;
+    }
 
     border-radius: 4px;
     -webkit-border-radius: 4px;
