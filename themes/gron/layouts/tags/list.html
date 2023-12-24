@@ -19,9 +19,7 @@
 
                 {{ with $referred_page := .Site.GetPage (path.Join "/tags" $mapped_lang) }}
                 <a href="{{ $referred_page.Permalink }}"
-                    class="btn btn-tag btn-xsm font-weight-bold {{ if eq $tag `all` }}active{{ end }}" role="button">
-                    all tags
-                </a>
+                    class="btn btn-tag btn-xsm font-weight-bold {{ if eq $tag `all` }}active{{ end }}" role="button">all tags</a>
                 {{ end }}
 
                 {{ range $tag_iter := $all_tags }}
@@ -53,9 +51,7 @@
                 {{ if ne (.Date.Format "2006") $currYear }}
                 {{ $currYear = (.Date.Format "2006") }}
                 <a href="#{{ print (.Date.Format `2006`) }}"
-                    class="btn btn-year btn-xsm" role="button">
-                    {{ print (.Date.Format "2006") }}
-                </a>
+                    class="btn btn-year btn-xsm" role="button">{{ print (.Date.Format "2006") }}</a>
                 {{ end }}
                 {{ end }}
             </div>
