@@ -20,7 +20,15 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           ref: main
           path: content/posts/_unlisted
-          
+      
+      - name: Download Dart Sass
+        run: curl -LJO https://github.com/sass/dart-sass/releases/download/1.69.5/dart-sass-1.69.5-linux-x64.tar.gz
+      - name: Unpack Dart Sass
+        run: |
+          tar -xvf dart-sass-1.69.5-linux-x64.tar.gz
+          dart-sass/sass --embedded --version          
+      - name: Add Dart Sass to the PATH
+        run: echo "$GITHUB_WORKSPACE/dart-sass" >> $GITHUB_PATH   
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -30,6 +38,9 @@ jobs:
       - name: Generate tags 
         run: ./bin/generate-tags.sh
 
+      - name: Generate css 
+        run: ./bin/compile-sass.sh
+        
       - name: Build website
         # remove --minify tag if you do not need it
         # docs: https://gohugo.io/hugo-pipes/minification/
