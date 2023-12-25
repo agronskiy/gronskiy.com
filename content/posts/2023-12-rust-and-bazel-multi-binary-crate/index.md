@@ -41,6 +41,7 @@ Expanding on why I use `Bazel`, in addition to great resources one can find[^rus
 All the above share several traits:
 - usually, *multiple* frameworks are involved (Rust + Docker, Rust + Python + Testing, Rust + Python + Docker + Testing)
 - usually, *dependent* binaries/libraries are used
+
 Both are addressed by a DAG-backed build system, whose nodes can be representing *any* task in *any* framework. 
 There are more of those (in particular, I like Pantsbuild[^pants]), but `Bazel`, among them, is what I think is truly battle-tested. 
 As anything battle-tested, it is *ugly* or at least not that *shiny* when it comes to diving deep into it, but... that's what we have to deal with.
