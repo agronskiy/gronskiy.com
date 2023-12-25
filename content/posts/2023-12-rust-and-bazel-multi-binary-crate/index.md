@@ -202,7 +202,7 @@ Error in fail: Tried to get all_crate_deps for package main_bin_crate/src/bin/bi
 WARNING: Target pattern parsing failed.
 ```
 Likely, the root cause is the fact that `rules_rust` considers each package[^package] to map into a crate, and 
-as we saw in the `WORKSPACE`, there's indeed not `Cargo.toml` for the `./main_bin_crate/src/bin/binary_two`. The 
+as we saw in the `WORKSPACE`, there indeed exists no `Cargo.toml` for the `./main_bin_crate/src/bin/binary_two`. The 
 necessary correction would be
 ```python
 load("@rules_rust//rust:defs.bzl", "rust_binary")
@@ -228,7 +228,7 @@ bazel-bin/main_bin_crate/
             └── binary_two*
 ```
 As we see, the only inconvenience consists in the fact that the output binary tree layout is now dissimilar 
-to that of what `Cargo` created. This is a minor inconvenience provided, especially if you're developing
+to that of what `Cargo` created. This is a minor inconvenience, especially if you're developing
 a non-publishable crate for some internal usage (e.g. dockerizing it later).
 
 ## Discussion
